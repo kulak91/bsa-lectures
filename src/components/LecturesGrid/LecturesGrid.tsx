@@ -45,7 +45,7 @@ const LecturesGrid = ({ lectures }: LecturesProps) => {
                 <div className="lecture-footer">
                   <div className="lecture-meta">
                     <div className="lecture-author">
-                      <Avatar name={avatar} className={'avatar-large'} />
+                      <Avatar name={author} className={'avatar-large'} />
                       <div className="lecture-author-name">{author}</div>
                     </div>
                     {duration && (
