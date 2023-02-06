@@ -13,20 +13,24 @@ import {
 } from '~/assets/images/avatars/intro-rounded';
 import { AuthorNames } from '~/enums';
 
+import './avatar.css';
+
 const avatarsMapper = {
-  'Viktoriia Vasylenko': viktoriiaVasylenko2021Avatar,
+  [AuthorNames.VIKTORIIA_VASYLENKO_EN]: viktoriiaVasylenko2021Avatar,
+  [AuthorNames.OLEKSANDR_DANYLCHENKO_UA]: oleksandrDanylchenko2021Avatar,
 };
 
 type AuthorProps = {
   name: AuthorNames;
+  className?: string;
 };
 
-const Author = ({ name }: AuthorProps) => {
+const Author = ({ name, className }: AuthorProps) => {
   const Avatar = avatarsMapper[name];
   return (
     <div className="avatar-wrapper">
       <object
-        className="avatar-object"
+        className={`avatar-object ${className}`}
         role="img"
         data={Avatar}
         aria-label={name}

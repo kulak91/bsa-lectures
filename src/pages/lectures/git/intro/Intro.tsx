@@ -1,15 +1,15 @@
 import React from 'react';
-
+import { Avatar } from '~/components';
+import { AuthorNames } from '~/enums';
+import { intro } from '../data/intro';
 const Test = () => {
   return (
     <div>
       <div className="author">
+        <Avatar name={AuthorNames.VIKTORIIA_VASYLENKO_EN} />
         <div className="profile">
-          <h3 className="name">Вікторія Василенко</h3>
-          <p className="about">
-            Вікторія працює в Binary Studio як Full stack developer після
-            закінчення Binary Studio Academy в 2020.{' '}
-          </p>
+          <h3 className="name">{intro.name}</h3>
+          <p className="about">{intro.about}</p>
         </div>
       </div>
       <div className="bubble" style={{ margin: '-0.5em 1em 1em' }}>
@@ -49,7 +49,7 @@ const Test = () => {
         <a href="https://git-scm.com/">
           <strong>Git</strong>
         </a>
-        ,{' '}
+        ,
         <a href="https://code.visualstudio.com/">
           <strong>Visual Studio Code</strong>
         </a>
