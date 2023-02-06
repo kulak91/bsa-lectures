@@ -1,0 +1,67 @@
+---
+orderId: 1
+author: "Viktoriia Vasylenko"
+title: "Git Homework"
+description: ""
+keywords: ["hola", "guapa"]
+duration: "31 min"
+publishedAt: "2021-11-18T10:00:00"
+hiddenFromMainPage: true
+---
+
+import { Lecture } from "~/mdx-wrappers";
+import resume_template from "../assets/resume_template.png";
+
+<div>
+  <h1>
+    <strong>Git Homework</strong>
+  </h1>
+</div>
+<div>
+  <div className="author">
+    <div className="profile">
+      <h3 className="name">Viktoriia Vasylenko</h3>
+      <p className="about">Viktoriia works at Binary Studio as a Full stack developer after
+        finishing Binary Studio Academy in 2020.</p>
+        <img src={resume_template} />
+    </div>
+  </div>
+  <div className="bubble" style={{margin: "-0.5em 1em 1em"}}>
+    <strong>Hi, student!</strong> 👋
+    <br />
+    Here you'll find a detailed instruction to your Git homework - so you just
+    need to follow the steps and it's done ✅. But firstly, pay attention to
+    that:
+    <ol className="compact inverted">
+      <li>
+        this is <strong>not</strong> a lecture script - some explanations may be
+        omitted <em>(because you've just seen the lecture, right?)</em>;
+      </li>
+      <li>
+        I highly recommend you to look throught all the tasks before you start your homework.
+        Pay attention, that <strong>you have only 3 attempt</strong> to run the automated test.
+      </li>
+      <li>
+        links to the documentations and guidelines are optional{" "}
+        <em>(you may ignore them if you feel strong enough)</em>;
+      </li>
+      <li>
+        please <strong>don't skip</strong> any steps and don't rename anything -
+        we'll run automated test after you submit the homework and namings may
+        be important!
+      </li>
+      <li>and if you have any questions - feel free to ask them in a chat</li>
+    </ol>
+    By the way, it's dangerous to go alone! Take this:{" "}
+    <a href="https://git-scm.com/">
+      <strong>Git</strong>
+    </a>
+    ,{" "}
+    <a href="https://code.visualstudio.com/">
+      <strong>Visual Studio Code</strong>
+    </a>
+    . Now let's go!
+  </div>
+</div>
+
+export default Lecture;
