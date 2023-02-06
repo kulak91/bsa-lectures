@@ -6,6 +6,7 @@ import { isDateInThePast } from '~/utils';
 import { MDXProvider } from '@mdx-js/react';
 import { Avatar, Block, Language } from '~/components/common';
 import './Lecture.css';
+import { Footer } from '~/components';
 
 const components = {
   Avatar,
@@ -46,7 +47,6 @@ const Lecture = ({
     },
   },
 }: LectureProps) => {
-  console.log('page', publishedAt);
   const isPublished = isDateInThePast(publishedAt);
   return (
     <>
@@ -67,6 +67,7 @@ const Lecture = ({
                 </>
               )}
             </article>
+            <Footer />
           </div>
         </div>
       </div>
