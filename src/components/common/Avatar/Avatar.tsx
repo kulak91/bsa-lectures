@@ -12,7 +12,7 @@ import {
   viktoriiaVasylenko2021Avatar,
 } from '~/assets/images/avatars/intro-rounded';
 import { AuthorNames } from '~/enums';
-
+import { Authors } from '~/data/homepage/lectures-list';
 import './avatar.css';
 
 const avatarsMapper = {
@@ -21,7 +21,7 @@ const avatarsMapper = {
 };
 
 type AuthorProps = {
-  name: AuthorNames;
+  name: Authors;
   className?: string;
 };
 
