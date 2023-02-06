@@ -1,1 +1,1 @@
-export { default as Lecture } from "../mdx-wrappers/Lecture/Lecture";
+// export { default as Lecture } from "../mdx-wrappers/Lecture/Lecture";
