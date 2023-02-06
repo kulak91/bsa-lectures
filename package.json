@@ -13,13 +13,18 @@
     "build": "gatsby clean && gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint:js": "npx eslint . --resolve-plugins-relative-to . --fix",
+    "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
+    "lint": "eslint . --ext md,mdx"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
+    "classnames": "^2.3.2",
     "gatsby": "^5.5.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-mdx": "^5.5.0",
+    "gatsby-plugin-sass": "^6.5.0",
     "gatsby-source-filesystem": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -32,6 +37,7 @@
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-mdx": "^2.0.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "gh-pages": "^5.0.0",
