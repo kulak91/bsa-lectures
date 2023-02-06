@@ -9,8 +9,18 @@ publishedAt: "2021-11-18T10:00:00"
 hiddenFromMainPage: true
 ---
 
-import { Lecture } from "~/mdx-wrappers";
-import resume_template from "../assets/resume_template.png";
+import { Lecture } from "~/components";
+import resume_template from "~/assets/images/resume_template.png";
+
+
+<Language
+  currentLanguage="en"
+  languages={{
+    en: "lectures/git/en",
+    ua: "lectures/git/",
+  }}
+/>
+
 
 <div>
   <h1>
@@ -19,6 +29,7 @@ import resume_template from "../assets/resume_template.png";
 </div>
 <div>
   <div className="author">
+    <Avatar name="Viktoriia Vasylenko" />
     <div className="profile">
       <h3 className="name">Viktoriia Vasylenko</h3>
       <p className="about">Viktoriia works at Binary Studio as a Full stack developer after

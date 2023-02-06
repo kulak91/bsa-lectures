@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   pathPrefix: `/bsa-lectures`,
@@ -11,28 +11,29 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-mdx",
+    'gatsby-plugin-mdx',
+    'gatsby-plugin-sass',
+    // {
+    //   resolve: `gatsby-plugin-typescript`,
+    //   options: {
+    //     isTSX: true, // defaults to false
+    //     // jsxPragma: `jsx`, // defaults to "React"
+    //     allExtensions: true, // defaults to false
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        isTSX: true, // defaults to false
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true, // defaults to false
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
+        name: 'pages',
         path: `${__dirname}/src/pages`,
       },
-      __key: "pages",
+      __key: 'pages',
     },
     {
-      resolve: "gatsby-plugin-alias-imports",
+      resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
-          "~": "src",
+          '~': 'src',
         },
       },
     },

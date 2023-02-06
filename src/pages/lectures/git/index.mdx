@@ -1,1 +1,45 @@
-UA mazafaka
+---
+orderId: 1
+author: "Viktoriia Vasylenko"
+title: "Git Homework"
+description: ""
+keywords: ["hola", "guapa"]
+duration: "31 min"
+publishedAt: "2021-11-18T10:00:00"
+hiddenFromMainPage: true
+---
+
+import { Lecture } from "~/components";
+import {default as Test } from './test/Test.tsx';
+import resume_template from "~/assets/images/resume_template.png";
+
+<div>
+  <h1>
+    <strong>Git Homework</strong>
+  </h1>
+</div>
+
+<Test />
+
+<Language
+  currentLanguage="ua"
+  languages={{
+    en: "lectures/git/en",
+    ua: "lectures/git/ ",
+  }}
+/>
+
+<Avatar name="Viktoriia Vasylenko" />
+
+<Block />
+
+<div className="bubble small subtle">
+  Не хвилюйся 😌, якщо твій репозиторій не отримав 10 — самотужки за короткий
+  проміжок часу репозиторії на 10 не складаються 😝. Хтось вкладе весь свій час
+  і сили в сам проект, але не встигне оформити репозиторій, а хтось зробить
+  навпаки. В першу чергу варто робити те, що подобається, і отримати максимум
+  задоволення від процесу. Якщо при цьому всьому ще й зайти в незнайому чи
+  некомфортну для cебе область і досягти успіхів там — то це взагалі супер!
+</div>
+
+export default Lecture;
