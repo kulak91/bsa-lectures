@@ -1,27 +1,41 @@
-/* Link to the main page */
-.mainpage-link {
-  margin: 0;
-  display: flex;
-  justify-content: center;
+html {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  font-size: 20px;
+  line-height: 1.5;
 }
-.mainpage-link a {
-  color: black;
+
+body {
+  background: #fff;
+  color: #3b4351;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,sans-serif;
+  font-size: .8rem;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+.text-gray {
+  color: #bcc3ce;
+ }
+
+/* a:visited {
+  color: #807fe2;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a, ins, u {
+  -webkit-text-decoration-skip: ink edges;
+  text-decoration-skip: ink edges;
+}
+a {
+  color: #5755d9;
+  outline: none;
+  transition: 5s cubic-bezier(0.075, 0.82, 0.165, 1);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s linear;
-}
-.mainpage-link a svg {
-  height: 1.2em;
-  margin-right: 0.125em;
-  position: relative;
-  top: 0.05em;
-}
-.mainpage-link a:hover {
-  transform: scale(1.05);
-  transform-origin: center center;
-}
+} */
 
 /* Handwave */
 .waving-hand {
@@ -84,4 +98,30 @@
 .lecture-number {
   line-height: 1em;
   white-space: nowrap;
+}
+
+.container {
+  max-width: 976px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+.hero-sm {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.hero-body {
+  padding: 0.4rem;
+  text-align: center;
 }

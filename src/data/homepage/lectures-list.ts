@@ -1,6 +1,6 @@
 import { AuthorNames } from '~/enums';
 
-type LectureList = {
+export type LectureList = {
   title: string;
   description: string;
   duration: string;
