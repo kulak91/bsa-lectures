@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar } from '~/components';
 import { AuthorNames } from '~/enums';
-import { intro } from '../data/intro';
+import { default as intro } from '../data/intro';
 const Test = () => {
   return (
     <div>
