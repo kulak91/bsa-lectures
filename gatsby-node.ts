@@ -20,3 +20,22 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
     });
   }
 };
+
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  stage,
+  loaders,
+  actions,
+}) => {
+  if (stage === 'build-html' || stage === 'develop-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /chartjs-plugin-dragdata/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
+};
