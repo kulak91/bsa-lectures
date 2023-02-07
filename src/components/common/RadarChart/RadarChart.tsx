@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import copy from 'copy-to-clipboard';
 import { isEqual } from 'lodash';
 import { roundToTwoDecimals } from './utils';
-import { Chart } from 'chart.js';
+import Chart from 'chart.js';
 import 'chartjs-plugin-dragdata';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faUndo } from '@fortawesome/pro-regular-svg-icons';
