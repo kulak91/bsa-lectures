@@ -6,6 +6,7 @@ const intro = {
   about:
     'Вікторія працює в Binary Studio як Full stack developer після закінчення Binary Studio Academy в 2020.',
 };
+
 type IntroBubble = {
   ua: IntroBlueBubbleProps;
   en: IntroBlueBubbleProps;
@@ -28,6 +29,7 @@ const introEN: IntroBlueBubbleProps = {
   footer:
     'By the way, it\'s dangerous to go alone! Take this: <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a>. Now let\'s go!',
 };
+
 const introUA: IntroBlueBubbleProps = {
   author: AuthorNames.VIKTORIIA_VASYLENKO_UA,
   about:
