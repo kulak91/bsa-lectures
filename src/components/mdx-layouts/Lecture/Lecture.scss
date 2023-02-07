@@ -1,3 +1,5 @@
+@import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/spectre-exp";
 
 /* Spectre.css overrides */
 .content ul,
@@ -540,3 +542,9 @@ div.details > input:first-child + label + .details-body {
   margin-bottom: 0;
 }
 
+.badge.badge-secondary {
+  &:after {
+    background-color: #eaeae1;
+    color: #727271;
+  }
+}

@@ -4,14 +4,32 @@ import { isDateInThePast } from '~/utils';
 // import { isDateInThePast } from "../../utils";
 // import "prismjs/themes/prism.css";
 import { MDXProvider } from '@mdx-js/react';
-import { Avatar, Block, Language } from '~/components/common';
-import './Lecture.css';
-import { Footer } from '~/components';
-
-const components = {
+import {
   Avatar,
   Block,
   Language,
+  IntroBlueBubble,
+  TimelineOfContents,
+  FacebookMessage,
+  RadarChart,
+  Level,
+  Accordion,
+} from '~/components/common';
+import { Footer } from '~/components';
+
+import './Lecture.scss';
+import 'prismjs/themes/prism.css';
+
+const components = {
+  Avatar,
+  Accordion,
+  Block,
+  Language,
+  Level,
+  IntroBlueBubble,
+  RadarChart,
+  FacebookMessage,
+  TimelineOfContents,
 };
 type Meta = {
   author?: string;
