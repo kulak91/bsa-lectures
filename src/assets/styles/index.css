@@ -18,7 +18,7 @@ body {
   color: #bcc3ce;
  }
 
-/* a:visited {
+a:visited {
   color: #807fe2;
 }
 
@@ -35,7 +35,7 @@ a {
   outline: none;
   transition: 5s cubic-bezier(0.075, 0.82, 0.165, 1);
   text-decoration: none;
-} */
+}
 
 /* Handwave */
 .waving-hand {

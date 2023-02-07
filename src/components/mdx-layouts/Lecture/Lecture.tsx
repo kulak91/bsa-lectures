@@ -4,7 +4,7 @@ import { isDateInThePast } from '~/utils';
 // import { isDateInThePast } from "../../utils";
 // import "prismjs/themes/prism.css";
 import { MDXProvider } from '@mdx-js/react';
-import { Avatar, Block, Language } from '~/components/common';
+import { Avatar, Block, Language, IntroBlueBubble } from '~/components/common';
 import './Lecture.css';
 import { Footer } from '~/components';
 
@@ -12,6 +12,7 @@ const components = {
   Avatar,
   Block,
   Language,
+  IntroBlueBubble,
 };
 type Meta = {
   author?: string;
