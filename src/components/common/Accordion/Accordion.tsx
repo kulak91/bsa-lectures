@@ -1,11 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-
-type HeaderProps = {
-  children: React.ReactNode;
-  className: string;
-  id: string;
-};
+import { AccordionProps, BodyProps, HeaderProps } from './types';
 
 const Header = ({ children, ...props }: HeaderProps) => {
   const randomId = Math.random().toString(36);
@@ -21,10 +16,6 @@ const Header = ({ children, ...props }: HeaderProps) => {
   );
 };
 
-type BodyProps = {
-  children: React.ReactNode;
-  className: string;
-};
 const Body = ({ children, ...props }: BodyProps) => {
   const { className, ...otherProps } = props;
   const classNames = classnames('accordion-body', className);
@@ -33,11 +24,6 @@ const Body = ({ children, ...props }: BodyProps) => {
       {children}
     </div>
   );
-};
-
-type AccordionProps = {
-  children: React.ReactNode;
-  className?: string;
 };
 
 const Accordion = ({ children, ...props }: AccordionProps) => {
