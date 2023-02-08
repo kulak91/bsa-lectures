@@ -1,9 +1,9 @@
 import React from 'react';
 import { Avatar } from '~/components';
-import { Authors } from '~/data/homepage/lectures-list';
+import { Author } from '~/data/homepage/lectures-list';
 
 export type IntroBlueBubbleProps = {
-  author: Authors;
+  author: Author;
   about: string;
   title: string;
   subtitle: string;
