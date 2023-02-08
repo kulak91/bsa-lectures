@@ -1,12 +1,12 @@
 type HeaderProps = {
   children: React.ReactNode;
-  className: string;
-  id: string;
+  className?: string;
+  id?: string;
 };
 
 type BodyProps = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 };
 
 type AccordionProps = {
