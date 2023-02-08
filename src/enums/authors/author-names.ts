@@ -21,5 +21,6 @@ export enum AuthorNames {
 
   ROMAN_SAHAN = 'Роман Саган',
 
-  VOLODYMYR_KUSHNIR = 'Володимир Кушнір',
+  VOLODYMYR_KUSHNIR_UA = 'Володимир Кушнір',
+  VOLODYMYR_KUSHNIR_RU = 'Владимир Кушнир',
 }
