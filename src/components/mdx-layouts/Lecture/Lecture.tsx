@@ -14,6 +14,10 @@ import {
   RadarChart,
   Level,
   Accordion,
+  ShrugMessage,
+  SlackMessage,
+  ThatsAllFolks,
+  VideoWrapper,
 } from '~/components/common';
 import { Footer } from '~/components';
 
@@ -30,6 +34,10 @@ const components = {
   RadarChart,
   FacebookMessage,
   TimelineOfContents,
+  ShrugMessage,
+  SlackMessage,
+  ThatsAllFolks,
+  VideoWrapper,
 };
 type Meta = {
   author?: string;
