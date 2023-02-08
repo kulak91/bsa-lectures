@@ -1,11 +1,11 @@
 import { AuthorNames } from '~/enums';
 
-export type Authors = (typeof AuthorNames)[keyof typeof AuthorNames];
+export type Author = (typeof AuthorNames)[keyof typeof AuthorNames];
 export type LectureList = {
   title: string;
   description: string;
   duration: string;
-  author: Authors;
+  author: Author;
   avatar: string;
   link: string;
   hiddenFromMainPage: boolean;

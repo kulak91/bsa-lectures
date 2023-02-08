@@ -1,55 +1,68 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import copy from 'copy-to-clipboard';
-import { isEqual } from 'lodash';
-import { roundToTwoDecimals } from './utils';
 import Chart from 'chart.js';
-import 'chartjs-plugin-dragdata';
+import { isEqual, roundToTwoDecimals } from './utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faUndo } from '@fortawesome/pro-regular-svg-icons';
-import './RadarChart.css';
 import { feedbackStarters } from './data/feedback-starters';
+import { ChartDatasets } from '~/types/chart/radar-chart';
+import 'chartjs-plugin-dragdata';
 
-class RadarChart extends Component {
-  constructor(props) {
-    super();
-    const { labels, datasets } = props;
-    console.log('props', props);
-    this.state = { labels, datasets };
-    this.createOptions = this.createOptions.bind(this);
-    this.resetMyGrades = this.resetMyGrades.bind(this);
-    this.copyFinalGrade = this.copyFinalGrade.bind(this);
-    this.copyGradesByCategories = this.copyGradesByCategories.bind(this);
-  }
+import './RadarChart.css';
 
-  copyFinalGrade(grade) {
-    copy(grade);
-  }
+type ChartProps = {
+  labels: string[];
+  datasets: ChartDatasets[];
+};
 
-  copyGradesByCategories(grades) {
+const RadarChart = ({ labels, datasets }: ChartProps) => {
+  const [chartData, setChartData] = useState({ labels, datasets });
+  const [chart, setChart] = useState<Chart | null>(null);
+  const [initiated, setInitiated] = useState<boolean>(false);
+  const chartElement = useRef<HTMLCanvasElement>(null);
+
+  const resetMyGrades = () => {
+    setChartData((prevData) => {
+      const newData = { ...prevData };
+      newData.datasets[0].data = [...prevData.datasets[1].data];
+      return newData;
+    });
+  };
+
+  const copyGradesByCategories = (grades: number[]) => {
     copy(
       feedbackStarters[
         Math.floor(Math.random() * (feedbackStarters.length - 1))
       ].replace('$1', grades.join('-')),
     );
-  }
+  };
 
-  createOptions() {
+  const copyFinalGrade = (grade: string) => {
+    copy(grade);
+  };
+
+  const createOptions = () => {
     return {
       type: 'radar',
-      data: { ...this.state },
+      data: { ...chartData },
       options: {
         aspectRatio: 1,
         dragData: true,
         dragDataRound: 0,
-        onDragEnd: (event, datasetIndex, index, value) =>
-          this.setState((state) => {
-            const newState = { ...state };
-            newState.datasets[datasetIndex].data = [
-              ...state.datasets[datasetIndex].data.slice(0, index),
+        onDragEnd: (
+          event: DragEvent,
+          datasetIndex: number,
+          index: number,
+          value: number,
+        ) =>
+          setChartData((prev) => {
+            const newChartData = { ...prev };
+            newChartData.datasets[datasetIndex].data = [
+              ...prev.datasets[datasetIndex].data.slice(0, index),
               value,
-              ...state.datasets[datasetIndex].data.slice(index + 1),
+              ...prev.datasets[datasetIndex].data.slice(index + 1),
             ];
-            return newState;
+            return newChartData;
           }),
         layout: {
           padding: {
@@ -85,58 +98,54 @@ class RadarChart extends Component {
         },
       },
     };
-  }
+  };
 
-  componentDidMount() {
-    this.chart = new Chart(this.el.getContext('2d'), this.createOptions());
-  }
+  const myGrades = chartData.datasets[0].data;
+  const myGradesAverage =
+    myGrades.reduce((memo, value) => (memo += value), 0) / myGrades.length;
+  const defaultGrades = chartData.datasets[1].data;
+  const areMyGradesDefault = isEqual(myGrades, defaultGrades);
 
-  componentDidUpdate() {
-    if (this.chart) {
-      this.chart.update(this.createOptions());
+  useEffect(() => {
+    if (!initiated && chartElement.current) {
+      const ctx = chartElement.current.getContext(
+        '2d',
+      ) as unknown as CanvasRenderingContext2D;
+      setChart(new Chart(ctx, createOptions()));
+      setInitiated(true);
     }
-  }
+  }, []);
 
-  resetMyGrades() {
-    this.setState((state) => {
-      const newState = { ...state };
-      newState.datasets[0].data = [...state.datasets[1].data];
-      return newState;
-    });
-  }
-
-  render() {
-    const myGrades = this.state.datasets[0].data;
-    const myGradesAverage =
-      myGrades.reduce((memo, value) => (memo += value), 0) / myGrades.length;
-    const defaultGrades = this.state.datasets[1].data;
-    const areMyGradesDefault = isEqual(myGrades, defaultGrades);
-    return (
-      <div className="radar-chart">
-        <canvas ref={(el) => (this.el = el)} />
-        {!areMyGradesDefault && (
-          <button className="reset-grades" onClick={this.resetMyGrades}>
-            <FontAwesomeIcon icon={faUndo} className="icon" /> Reset
-          </button>
-        )}
-        <button
-          className="grades-by-categories"
-          onClick={() => this.copyGradesByCategories(myGrades)}
-        >
-          <FontAwesomeIcon icon={faCopy} className="icon" />
+  useEffect(() => {
+    if (chart) {
+      chart.update();
+    }
+  }, [chartData]);
+  return (
+    <div className="radar-chart">
+      <canvas ref={chartElement} />
+      {!areMyGradesDefault && (
+        <button className="reset-grades" onClick={resetMyGrades}>
+          <FontAwesomeIcon icon={faUndo} className="icon" /> Reset
         </button>
-        <button
-          className="final-grade"
-          onClick={() =>
-            this.copyFinalGrade(roundToTwoDecimals(myGradesAverage))
-          }
-        >
-          {roundToTwoDecimals(myGradesAverage)}
-          <FontAwesomeIcon icon={faCopy} className="icon" />
-        </button>
-      </div>
-    );
-  }
-}
+      )}
+      <button
+        className="grades-by-categories"
+        onClick={() => copyGradesByCategories(myGrades)}
+      >
+        <FontAwesomeIcon icon={faCopy} className="icon" />
+      </button>
+      <button
+        className="final-grade"
+        onClick={() =>
+          copyFinalGrade(String(roundToTwoDecimals(myGradesAverage)))
+        }
+      >
+        {roundToTwoDecimals(myGradesAverage)}
+        <FontAwesomeIcon icon={faCopy} className="icon" />
+      </button>
+    </div>
+  );
+};
 
 export default RadarChart;

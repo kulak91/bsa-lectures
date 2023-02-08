@@ -12,22 +12,35 @@ import {
   viktoriiaVasylenko2021Avatar,
 } from '~/assets/images/avatars/intro-rounded';
 import { AuthorNames } from '~/enums';
-import { Authors } from '~/data/homepage/lectures-list';
+import { Author } from '~/data/homepage/lectures-list';
+
 import './avatar.css';
 
-const avatarsMapper = {
+const nameToImage = {
   [AuthorNames.VIKTORIIA_VASYLENKO_EN]: viktoriiaVasylenko2021Avatar,
   [AuthorNames.VIKTORIIA_VASYLENKO_UA]: viktoriiaVasylenko2021Avatar,
+  [AuthorNames.VIKTORIIA_VASYLENKO_RU]: viktoriiaVasylenko2021Avatar,
   [AuthorNames.OLEKSANDR_DANYLCHENKO_UA]: oleksandrDanylchenko2021Avatar,
+  [AuthorNames.OLEKSANDR_DANYLCHENKO_EN]: oleksandrDanylchenko2021Avatar,
+  [AuthorNames.OLEKSANDR_DANYLCHENKO_RU]: oleksandrDanylchenko2021Avatar,
+  [AuthorNames.ALEXANDR_TOVMACH]: alexandrTovmach2018Avatar,
+  [AuthorNames.KYRYLO_LESOHORSKYI]: kyryloLesohorskyi2020Avatar,
+  [AuthorNames.NIKITA_KRASNOV]: nikitaKrasnov2018Avatar,
+  [AuthorNames.PAVEL_NEMCHENKO]: pavelNemchenko2017Avatar,
+  [AuthorNames.VOLODYMYR_LENCH]: LenchVolodymyr2021Avatar,
+  [AuthorNames.ROSTYSLAV_DIAKIV]: rostyslavDiakiv2018Avatar,
+  [AuthorNames.ROMAN_SAHAN]: romanSahan2017Avatar,
+  [AuthorNames.VOLODYMYR_KUSHNIR_RU]: volodymyrKushnir2017Avatar,
+  [AuthorNames.VOLODYMYR_KUSHNIR_UA]: volodymyrKushnir2017Avatar,
 };
 
 type AuthorProps = {
-  name: Authors;
+  name: Author;
   className?: string;
 };
 
-const Author = ({ name, className }: AuthorProps) => {
-  const Avatar = avatarsMapper[name];
+const Avatar = ({ name, className }: AuthorProps) => {
+  const Avatar = nameToImage[name];
   return (
     <div className="avatar-wrapper">
       <object
@@ -40,4 +53,4 @@ const Author = ({ name, className }: AuthorProps) => {
   );
 };
 
-export default Author;
+export default Avatar;
