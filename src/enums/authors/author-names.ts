@@ -28,4 +28,7 @@ export enum AuthorNames {
   IVAN_HEDZ = 'Ivan Hedz',
 
   ULIANA_LOBANOVA = 'Uliana Lobanova',
+
+  SERHII_YANCHUK_UA = 'Сергій Янчук',
+  SERHII_YANCHUK_EN = 'Serhii Yanchuk',
 }

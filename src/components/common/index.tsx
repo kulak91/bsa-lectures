@@ -11,3 +11,4 @@ export { default as SlackMessage } from './SlackMessage/SlackMessage';
 export { default as ThatsAllFolks } from './ThatsAllFolks/ThatsAllFolks';
 export { default as VideoWrapper } from './VideoWrapper/VideoWrapper';
 export { default as ShrugMessage } from './ShrugMessage/ShrugMessage';
+export { default as Flute } from './Flute/Flute';

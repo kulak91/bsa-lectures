@@ -18,6 +18,7 @@ import {
   SlackMessage,
   ThatsAllFolks,
   VideoWrapper,
+  Flute,
 } from '~/components/common';
 import { Footer } from '~/components';
 
@@ -38,6 +39,7 @@ const components = {
   SlackMessage,
   ThatsAllFolks,
   VideoWrapper,
+  Flute,
 };
 type Meta = {
   author?: string;

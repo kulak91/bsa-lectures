@@ -11,6 +11,7 @@ import {
   viktoriiaVasylenko2021Avatar,
   ivanHedz2023Avatar,
   ulianaLobanova2021Avatar,
+  serhiiYanchuk2023Avatar,
 } from '~/assets/images/avatars/intro-rounded';
 import { AuthorNames } from '~/enums';
 
@@ -33,6 +34,8 @@ const nameToImage = {
   [AuthorNames.VOLODYMYR_KUSHNIR_UA]: volodymyrKushnir2017Avatar,
   [AuthorNames.IVAN_HEDZ]: ivanHedz2023Avatar,
   [AuthorNames.ULIANA_LOBANOVA]: ulianaLobanova2021Avatar,
+  [AuthorNames.SERHII_YANCHUK_EN]: serhiiYanchuk2023Avatar,
+  [AuthorNames.SERHII_YANCHUK_UA]: serhiiYanchuk2023Avatar,
 };
 
 export { nameToImage };
