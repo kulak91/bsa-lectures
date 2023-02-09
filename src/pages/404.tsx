@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, HeadFC, PageProps } from 'gatsby';
+import { ShrugMessage } from '~/components/common';
 
 const pageStyles = {
   color: '#232129',
@@ -28,7 +29,16 @@ const NotFoundPage: React.FC<PageProps> = () => {
     <main style={pageStyles}>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
+        <ShrugMessage>
+          <h4>— Sorry, this page hasn’t hatched yet.</h4>
+          <p>
+            There’s a behind-the-scenes story (and 🎬bloopers!) we are yet to
+            publish about people who made these lectures for you, how they did
+            it, and why we thought it is a good idea to create them in the first
+            place.
+          </p>
+          <p>We humbly ask you to check it out later!</p>
+        </ShrugMessage>
         <br />
         {process.env.NODE_ENV === 'development' ? (
           <>
