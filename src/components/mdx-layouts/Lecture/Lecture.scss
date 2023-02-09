@@ -567,6 +567,6 @@ div.details > input:first-child + label + .details-body {
   border-left: none;
 }
 
- .content tr:nth-child(2n) {
+ .content thead {
   background-color: rgba(201,209,217,.5);
 }
