@@ -1,10 +1,46 @@
 import * as React from 'react';
-import { WrapPageElementNodeArgs } from 'gatsby';
+import { WrapPageElementBrowserArgs } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
+import {
+  Avatar,
+  Block,
+  Language,
+  IntroBlueBubble,
+  TimelineOfContents,
+  FacebookMessage,
+  RadarChart,
+  Level,
+  Accordion,
+  ShrugMessage,
+  SlackMessage,
+  ThatsAllFolks,
+  VideoWrapper,
+  Flute,
+} from '~/components/common';
 
 import '~/assets/styles/index.css';
 
+const components = {
+  Avatar,
+  Accordion,
+  Block,
+  Language,
+  Level,
+  IntroBlueBubble,
+  RadarChart,
+  FacebookMessage,
+  TimelineOfContents,
+  ShrugMessage,
+  SlackMessage,
+  ThatsAllFolks,
+  VideoWrapper,
+  Flute,
+};
+
 const wrapPageElement = ({
   element,
-}: WrapPageElementNodeArgs): React.ReactNode => <>{element}</>;
+}: WrapPageElementBrowserArgs): React.ReactNode => (
+  <MDXProvider components={components}>{element}</MDXProvider>
+);
 
 export { wrapPageElement };

@@ -3,44 +3,44 @@ import { isDateInThePast } from '~/utils';
 // import { SEO, Header, Footer, ShrugMessage } from "..";
 // import { isDateInThePast } from "../../utils";
 // import "prismjs/themes/prism.css";
-import { MDXProvider } from '@mdx-js/react';
-import {
-  Avatar,
-  Block,
-  Language,
-  IntroBlueBubble,
-  TimelineOfContents,
-  FacebookMessage,
-  RadarChart,
-  Level,
-  Accordion,
-  ShrugMessage,
-  SlackMessage,
-  ThatsAllFolks,
-  VideoWrapper,
-  Flute,
-} from '~/components/common';
+// import { MDXProvider } from '@mdx-js/react';
+// import {
+//   Avatar,
+//   Block,
+//   Language,
+//   IntroBlueBubble,
+//   TimelineOfContents,
+//   FacebookMessage,
+//   RadarChart,
+//   Level,
+//   Accordion,
+//   ShrugMessage,
+//   SlackMessage,
+//   ThatsAllFolks,
+//   VideoWrapper,
+//   Flute,
+// } from '~/components/common';
 import { Footer } from '~/components';
 
 import './Lecture.scss';
 import 'prismjs/themes/prism.css';
 
-const components = {
-  Avatar,
-  Accordion,
-  Block,
-  Language,
-  Level,
-  IntroBlueBubble,
-  RadarChart,
-  FacebookMessage,
-  TimelineOfContents,
-  ShrugMessage,
-  SlackMessage,
-  ThatsAllFolks,
-  VideoWrapper,
-  Flute,
-};
+// const components = {
+//   Avatar,
+//   Accordion,
+//   Block,
+//   Language,
+//   Level,
+//   IntroBlueBubble,
+//   RadarChart,
+//   FacebookMessage,
+//   TimelineOfContents,
+//   ShrugMessage,
+//   SlackMessage,
+//   ThatsAllFolks,
+//   VideoWrapper,
+//   Flute,
+// };
 type Meta = {
   author?: string;
   orderId: number;
@@ -84,7 +84,7 @@ const Lecture = ({
             {/* <Header /> */}
             <article className="content">
               {isPublished ? (
-                <MDXProvider components={components}>{children}</MDXProvider>
+                <>{children}</>
               ) : (
                 <>
                   <h4>
