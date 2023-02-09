@@ -1,4 +1,3 @@
-export { Page, Lecture } from './mdx-layouts';
 export { Avatar, Block, Language } from './common';
 export { default as LecturesGrid } from './LecturesGrid/LecturesGrid';
 export { default as Footer } from './Footer/Footer';
