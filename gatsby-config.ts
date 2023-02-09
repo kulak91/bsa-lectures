@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import remarkGfm from 'remark-gfm';
 
 const config: GatsbyConfig = {
   pathPrefix: `/bsa-lectures`,
@@ -14,6 +15,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
@@ -52,6 +54,9 @@ const config: GatsbyConfig = {
             },
           },
         ],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
       },
     },
     'gatsby-plugin-sass',

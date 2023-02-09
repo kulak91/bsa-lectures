@@ -548,3 +548,25 @@ div.details > input:first-child + label + .details-body {
     color: #727271;
   }
 }
+
+.content table {
+  border-collapse: collapse;
+  border-style: hidden;
+  border: 2px solid rgba(201,209,217,.5);
+ }
+
+ .content table td {
+  padding: 0.5rem;
+  border: 2px solid rgba(201,209,217,.5);
+}
+.content table th {
+  padding: 0.5rem;
+  border: 2px solid rgba(201,209,217,.5);
+}
+.content td:first-child, .content th:first-child {
+  border-left: none;
+}
+
+ .content tr:nth-child(2n) {
+  background-color: rgba(201,209,217,.5);
+}
