@@ -6,7 +6,7 @@ description: "Alexander will explain what a web server is, how to work with the 
 keywords: ["nodejs", "ulianalobanova", "lecture-3"]
 duration: "36 min"
 publishedAt: "2021-12-20T00:00:00"
-hiddenFromMainPage: true
+hiddenFromMainPage: false
 ---
 import { Lecture } from '~/components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -67,44 +67,45 @@ import SnippetShell03 from '../assets/snippets/snippet-shell-03.mdx';
 import SnippetShell04 from '../assets/snippets/snippet-shell-04.mdx';
 import SnippetShell05 from '../assets/snippets/snippet-shell-05.mdx';
 import SnippetShell06 from '../assets/snippets/snippet-shell-06.mdx';
+import SnippetShell07 from '../assets/snippets/snippet-shell-07.mdx';
 import audio from "~/assets/audio/in_the_end.mp3";
 
 <div><h1><strong>Express yourself with Node.js</strong></h1></div>
 
 <Language
   currentLanguage="en"
-  languages={{"ua": "lectures/express-yourself-with-nodejs", "en": "lectures/express-yourself-with-nodejs/en"}
+  languages={{"ua": "lectures/express-yourself-with-nodejs/", "en": "lectures/express-yourself-with-nodejs/en"}
 }/>
 
 
 <div>
-  <div class="author">
-    <div class="avatar-wrapper">
-      <object class="avatar-object" data={ulianaLobanova2021Avatar} role="img" aria-label="Uliana profile picture"></object>
+  <div className="author">
+    <div className="avatar-wrapper">
+      <object className="avatar-object" data={ulianaLobanova2021Avatar} role="img" aria-label="Uliana profile picture"></object>
     </div>
-    <div class="profile">
-      <h3 class="name">Uliana Lobanova</h3>
-      <ul class="contacts">
+    <div className="profile">
+      <h3 className="name">Uliana Lobanova</h3>
+      <ul className="contacts">
         <li>
-          <a href="https://www.linkedin.com/in/uliana-l-b34129105/" rel="author" class="linkedin">
+          <a href="https://www.linkedin.com/in/uliana-l-b34129105/" rel="author" className="linkedin">
             <FontAwesomeIcon icon={faLinkedin} className="icon" />
             <span>uliana-l</span>
           </a>
         </li>
       </ul>
-      <p class="about">
+      <p className="about">
         Full-Stack JavaScript Developer at <a href="https://binary-studio.com"><strong>Binary Studio</strong></a>, movie junkie and cat lover.
         Enjoys appealing UIs, watching the sea, crime comedies and Le Big Mac 🔫💼    
       </p>
     </div>
   </div>
-  <div class="bubble" style="margin: -0.5em 1em 1em;">
+  <div className="bubble" style={{ margin: "-0.5em 1em 1em"}}>
     <strong>Hello!</strong><br />Remembering the days when I was a student, I tried not to overload the lecture with unnecessary and complicated information that will not be useful to you in the next couple of months. On the other hand, it is encouraged to understand the details, therefore, I will attach links to additional materials and articles. The lecture is divided into blocks that are as independent of each other as possible, so if, after reading a title, you understand you're already familiar with the content, feel free to move on to the next block.<br />Good luck!
   </div>
 </div>
 
 
-<div class="messages">
+<div className="messages">
   Ryu, being very happy with the online fighting game, started showing off to his friends. At first, the game caused incredible excitement, but before Ryu had a chance to begin negotiations with Capcom, the hype had subsided. Everyone noted that there are too few characters in the game and their characteristics do not correspond to reality, which is why it became boring to play.
   Frustrated, Ryu again asks the developers to fix the situation:
 </div>
@@ -141,10 +142,10 @@ The student realized that a simple page begins to grow into a serious applicatio
   Yes, I think we can implement all this using a server.
 </SlackMessage>
 
-And since the student writes in JS, the choice for the technology becomes obvious - Node.js. There is only one little thing left ― <span class="tooltip" data-tooltip='well, yeah, "little thing"...'><u>to learn this technology</u></span>.
+And since the student writes in JS, the choice for the technology becomes obvious - Node.js. There is only one little thing left ― <span className="tooltip" data-tooltip='well, yeah, "little thing"...'><u>to learn this technology</u></span>.
 <hr />
 
-<div id="table-of-contents" class="table-of-contents">
+<div id="table-of-contents" className="table-of-contents">
   <h2>
     <strong>Working with Node.js</strong>
   </h2>
@@ -186,35 +187,35 @@ And since the student writes in JS, the choice for the technology becomes obviou
   <iframe src="https://www.youtube.com/embed/wyxUw25CG1k?start=31&end=301" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 </VideoWrapper>
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-1-1" />
-  <label class="summary" for="accordion-1-1">
+  <label className="summary" htmlFor="accordion-1-1">
     <strong>Definitions</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
     <ul>
       <li>
         <a href="https://en.wikipedia.org/wiki/Client_(computing)"><strong>Client</strong></a> ― can be a browser or any other software that makes requests through the web.
       </li>
       <li>
         <div><a href="https://en.wikipedia.org/wiki/Web_server"><strong>Server</strong></a> ― a program or a part of it that accepts client requests via HTTP and responds with the content of requested resource or an error message.</div>
-        <div class="bubble small subtle">
+        <div className="bubble small subtle">
           When a web developer says "server", they mean "web server". The same applies to "client", "application", etc.
         </div>
       </li>
       <li>
         <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"><strong>HTTP</strong></a> ― a set of rules for data communication on the Internet.
-        </li>
+      </li>
       <li>
         <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods"><strong>HTTP-method</strong></a> ― indicates the desired action to be performed on the identified resource. The main ones include <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong>, <strong>DELETE</strong> ― there are some more, but this is the basis that will be enough for a while
-        </li>
+      </li>
       <li>
         <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes"><strong>HTTP-status</strong></a> ― issued by a server in response to a client's request and tells you the status of the requested operation. The most commonly used: <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#200"><strong>200</strong></a>, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#301"><strong>301</strong></a>, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#401"><strong>401</strong></a>, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#404"><strong>404</strong></a>, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#500"><strong>500</strong></a>.
-        </li>
+      </li>
     </ul>
   </div>
 </div>
-<ol class="inverted">
+<ol className="inverted">
   <li>
     <h5><strong>Web theory</strong></h5>
     Let's take a look at an example of how the Web works:
@@ -229,42 +230,36 @@ And since the student writes in JS, the choice for the technology becomes obviou
         <em>server processed the request</em> / <strong>identified that a client requested a file and then found the file</strong>
       </li>
       <li>
-        <div class="details">
-          <label class="summary" for="accordion-1-2">
-            <em>server returned the file</em> / <strong>via HTTP responded with the 200 status and an HTML file</strong>
-          </label>
-          <input type="checkbox" id="accordion-1-2" />
-          <div class="details-body">
-            <img src={networkImage} alt="" />
-          </div>
+        <div className="details">
+          <label className="summary" htmlFor="accordion-1-2"><em>server returned the file</em> / <strong>via HTTP responded with the 200 status and an HTML file</strong></label><input type="checkbox" id="accordion-1-2" /><div className="details-body"><img src={networkImage} alt="" /></div>
         </div>
       </li>
     </ol>
-    <div class="bubble small subtle">
+    <div className="bubble small subtle">
       <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works">Article "How the Web works"</a>
     </div>
-    <div class="bubble small subtle">
+    <div className="bubble small subtle">
       If you write JS code and have already implemented your first HTML-page - it means that you know the client well enough. Here we will concentrate on the server-side <em><s>(actually, we deal with the server because it's the topic of the lecture, but it does not matter)</s></em>.
     </div>
   </li>
   <li>
     <h5><strong>Server ― "what?" and "why?"</strong></h5>
-    <div class="details">
+    <div className="details">
       <input type="checkbox" id="accordion-1-3" />
-      <label class="summary" for="accordion-1-3">
+      <label className="summary" htmlFor="accordion-1-3">
         <strong>What</strong> is server?
       </label>
-      <div class="details-body">
+      <div className="details-body">
         Simply put, when a user types a request in the address bar, the browser requests data from a remote computer (server) via HTTP. In response, it receives a file or data to display in a browser.
         <img src={clientServerModelImage} alt="" />
       </div>
     </div>
-    <div class="details">
+    <div className="details">
       <input type="checkbox" id="accordion-1-4" />
-      <label class="summary" for="accordion-1-4">
+      <label className="summary" htmlFor="accordion-1-4">
         <strong>Why</strong> do we need a server?
       </label>
-      <div class="details-body">
+      <div className="details-body">
         To save and process all resources used on the web. It doesn't matter if it's one static page or a whole Facebook, everything is located on remote servers or web hosting services, and is displayed to the user only on request.
         <img src={serverRoomImage} alt="" />
       </div>
@@ -273,7 +268,7 @@ And since the student writes in JS, the choice for the technology becomes obviou
   </li>
   <li>
     <h5><strong>The history of Node.js</strong></h5>
-    <div class="bubble small subtle">
+    <div className="bubble small subtle">
       <blockquote>
         <a href="https://twitter.com/ryanmdahl"><strong>Ryan Dahl</strong></a>,&nbsp;
         <a href="https://www.youtube.com/watch?v=ysSxxIqKNN0"><strong>2009</strong></a><br />
@@ -281,8 +276,8 @@ And since the student writes in JS, the choice for the technology becomes obviou
       </blockquote>
     </div>
     <p>It was 2009 when the first version of Node.js was published. After that there have been <a href="https://blog.risingstack.com/history-of-node-js/">some issues with rights</a>, but we're less interested in politics than in the fact that Node.js executes JavaScript code outside a web browser:</p>
-    <div class="columns">
-      <div class="column col-4 col-xs-12">
+    <div className="columns">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -297,7 +292,7 @@ And since the student writes in JS, the choice for the technology becomes obviou
           </div>
         </div>
       </div>
-      <div class="column col-4 col-xs-12">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -312,7 +307,7 @@ And since the student writes in JS, the choice for the technology becomes obviou
           </div>
         </div>
       </div>
-      <div class="column col-4 col-xs-12">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -346,14 +341,14 @@ And since the student writes in JS, the choice for the technology becomes obviou
 
 To start the installation process, just go to the official website [https://nodejs.org](https://nodejs.org), and download the installation file for your operating system, then follow the instructions.
 
-<div class="bubble small subtle">
+<div className="bubble small subtle">
   It would also be a very good idea to use a package called node version manager to manage the installation of different node versions on your system. There is an <a href="https://github.com/nvm-sh/nvm">nvm package for Mac and Linux</a> or a separate <a href="https://github.com/coreybutler/nvm-windows">package for Windows</a>. Check one of those links and follow the instructions to install nvm on your system and that will give you the ability to install any version of Node.js you need.
 </div>
 
 There is no point in writing the full installation process for all operating systems, there are a lot of official tutorials for that, but I want to pay attention to the common installation problems.
 
-<div class="columns">
-  <div class="column col-4 col-xs-12">
+<div className="columns">
+  <div className="column col-4 col-xs-12">
     <div className="panel">
       <div className="panel-header">
         <div className="panel-title">
@@ -368,7 +363,7 @@ There is no point in writing the full installation process for all operating sys
       </div>
     </div>
   </div>
-  <div class="column col-4 col-xs-12">
+  <div className="column col-4 col-xs-12">
     <div className="panel">
       <div className="panel-header">
         <div className="panel-title">
@@ -383,7 +378,7 @@ There is no point in writing the full installation process for all operating sys
       </div>
     </div>
   </div>
-  <div class="column col-4 col-xs-12">
+  <div className="column col-4 col-xs-12">
     <div className="panel">
       <div className="panel-header">
         <div className="panel-title">
@@ -401,25 +396,25 @@ There is no point in writing the full installation process for all operating sys
 </div>
 
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-2-1" />
-  <label class="summary" for="accordion-2-1">
+  <label className="summary" htmlFor="accordion-2-1">
     <strong>Use a terminal to verify a successful Node.js installation.</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
     Run next commands:
-  <SnippetShell01 />
+    <SnippetShell01 />
   </div>
 </div>
 
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-2-2" />
-  <label class="summary" for="accordion-2-2">
+  <label className="summary" htmlFor="accordion-2-2">
     <strong>If the version is displayed - everything is installed and working properly.</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
     _your versions may be newer_
 
@@ -442,17 +437,17 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
   <iframe src="https://www.youtube.com/embed/wyxUw25CG1k?start=488&end=816" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 </VideoWrapper>
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-3-1" />
-  <label class="summary" for="accordion-3-1">
+  <label className="summary" htmlFor="accordion-3-1">
     <strong>Definitions</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
 
-- [Modules](https://en.wikipedia.org/wiki/Modular_programming) — parts of a program / code, divided in separate blocks for further reuse.
-- [Packages](https://en.wikipedia.org/wiki/Software_suite) — a collection of modules.
-- [Package managers](https://en.wikipedia.org/wiki/Package_manager) ― a tool for installing, uninstalling, updating, versioning and validating packages and modules.
+    - [Modules](https://en.wikipedia.org/wiki/Modular_programming) — parts of a program / code, divided in separate blocks for further reuse.
+    - [Packages](https://en.wikipedia.org/wiki/Software_suite) — a collection of modules.
+    - [Package managers](https://en.wikipedia.org/wiki/Package_manager) ― a tool for installing, uninstalling, updating, versioning and validating packages and modules.
 
 
   </div>
@@ -460,31 +455,31 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
 
 <br />
 
-<ol class="inverted">
+<ol className="inverted">
   <li>
     <h5><strong>What are "packages" and why do they need "managers"?</strong></h5>
-    <div class="details">
+    <div className="details">
       <input type="checkbox" id="accordion-3-2" />
-      <label class="summary" for="accordion-3-2">
+      <label className="summary" htmlFor="accordion-3-2">
         <strong>To explain what a package / module is, let's take a look at an example.</strong>
       </label>
-      <div class="details-body">
+      <div className="details-body">
 
         _1. In your project, you wrote a function to sort an array and reuse it in several places._
 
-        <div class="bubble small subtle">
+        <div className="bubble small subtle">
           Congratulations, it's almost a package / module
         </div>
 
         _2. Later, you decided that the same function could help someone else, so you published it on [StackOverflow as a reply](https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly)._
 
-        <div class="bubble small subtle">
+        <div className="bubble small subtle">
           Now your package / module is publicly available and other developers can simply copypaste it.
         </div>
 
         _3. And what if your solution was longer and took 400 lines of code? 500 lines? 1000?_
 
-        <div class="bubble small subtle">
+        <div className="bubble small subtle">
 
           It is not so convenient to copy such amounts of data manually. 
 
@@ -492,7 +487,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
 
         _4. Therefore, it is better to format your function correctly and publish it to a remote storage._
 
-        <div class="bubble small subtle">
+        <div className="bubble small subtle">
           Now other programmers just need to know the name of your package / module and use **npm** to add it to their project, delete it if they don't like it, or upgrade to the next version if you implement it.
         </div>
 
@@ -503,8 +498,8 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
 
     [Several years ago](https://www.javascriptstuff.com/javascript-frontend-package-managers/) the block about package managers could have taken the whole lecture due to their variety, but today the situation has stabilized, and now to work with JS we have 2 leaders:
 
-    <div class="columns">
-      <div class="column col-6 col-xs-12">
+    <div className="columns">
+      <div className="column col-6 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -519,7 +514,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
           </div>
         </div>
       </div>
-      <div class="column col-6 col-xs-12">
+      <div className="column col-6 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -538,7 +533,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
 
     All  **npm** packages are available in **yarn**, because they use the same data source. **yarn** was created only to improve the performance of **npm**. There is no actual difference between them, except for the subjective judgment of fans of a particular tool. In the future, you will have to decide on your own what is more convenient for you to work with, but today we will talk about **npm**, because of its relation with Node.js.
 
-    <div class="bubble small subtle">
+    <div className="bubble small subtle">
 
       [Article "Yarn vs npm: Everything You Need to Know"](https://www.sitepoint.com/yarn-vs-npm/)
       
@@ -554,8 +549,8 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
   </li>
   <li>
     In conclusion, I would like to explain why people came up with "package managers", after all, we could add the code manually directly to the project without any problems:
-    <div class="columns">
-      <div class="column col-4 col-xs-12">
+    <div className="columns">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -570,7 +565,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
           </div>
         </div>
       </div>
-      <div class="column col-4 col-xs-12">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -585,7 +580,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
           </div>
         </div>
       </div>
-      <div class="column col-4 col-xs-12">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -600,7 +595,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
           </div>
         </div>
       </div>
-      <div class="column col-4 col-xs-12">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -615,7 +610,7 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
           </div>
         </div>
       </div>
-      <div class="column col-4 col-xs-12">
+      <div className="column col-4 col-xs-12">
         <div className="panel">
           <div className="panel-header">
             <div className="panel-title">
@@ -646,29 +641,29 @@ Did you notice **npm**? But did we install it? It's a package manager developed 
   <iframe src="https://www.youtube.com/embed/wyxUw25CG1k?start=817&end=1024" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 </VideoWrapper>
 
-**Node.js** - is a **JavaScript** runtime, where we can run scripts. Everything will work <span class="tooltip" data-tooltip='"almost" because they only have V8 in common'><u>almost like in a browser</u></span>, so the transition from frontend to backend should be <span class="tooltip" data-tooltip='compared to learning a new language'><u>as comfortable as possible</u></span>.
+**Node.js** - is a **JavaScript** runtime, where we can run scripts. Everything will work <span className="tooltip" data-tooltip='"almost" because they only have V8 in common'><u>almost like in a browser</u></span>, so the transition from frontend to backend should be <span className="tooltip" data-tooltip='compared to learning a new language'><u>as comfortable as possible</u></span>.
 
 To go to the environment you need to run the command `node` in the terminal, then run any JS code. But obviously, this method is not the most convenient one and it is better to write code in files, that can then be run with the command `node file_name.js`.  
 
 Experiment time! We already know how to use all of JS 's power with Node and that's awesome, but now we want to start implementing servers. Let's open [an official documentation](https://nodejs.org/api/), to take a look at the list of built-in **Node.js** packages, and find out how to work with them. As we can see, there are too many of them, but we only need one to get started - [http](https://nodejs.org/api/http.html), that is responsible for working via HTTP. After reading the description we understand that it has many methods and it doesn't make sense for a beginner to consider all of them, instead let's write a practical example of starting an HTTP server: 
 <SnippetJS01 />
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-4-1" />
-  <label class="summary" for="accordion-4-1">
+  <label className="summary" htmlFor="accordion-4-1">
     <strong>Run the file</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
     <img src={server_startedImg} alt="server_started" />
   </div>
 </div>
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-4-2" />
-  <label class="summary" for="accordion-4-2">
+  <label className="summary" htmlFor="accordion-4-2">
     <strong>Check the server via browser</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
     The browser always sends a GET request to the specified URL and in addition requests _favicon.ico_, because it perceives any address as a page.
 
@@ -680,17 +675,17 @@ Experiment time! We already know how to use all of JS 's power with Node and tha
   </div>
 </div>
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-4-3" />
-  <label class="summary" for="accordion-4-3">
+  <label className="summary" htmlFor="accordion-4-3">
     <strong>Check the server via Postman</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
     Meet [Postman](https://www.getpostman.com/) ― tool for convenient sending of HTTP-requests to a server. Via Postman we can easily change the URL, methods, headers, and body of requests.
 
     <img src={postmanImg} alt="postman" />
-    <div class="bubble small subtle">
+    <div className="bubble small subtle">
 
       ["Postman Introduction"](https://learning.postman.com/docs/getting-started/introduction/)
       
@@ -702,33 +697,33 @@ Experiment time! We already know how to use all of JS 's power with Node and tha
 We created a working server! Hooray! It is very simple and does not understand the difference between GEt and POST requests, does not know how to work with request body and much more, but it is the first one and we ❤️ it just for that, right? Let's teach the server to save all logs to a file, and also try another package [fs](https://nodejs.org/api/fs.html), designed to work with the file system:
 <SnippetJS02 />
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-4-4" />
-  <label class="summary" for="accordion-4-4">
+  <label className="summary" htmlFor="accordion-4-4">
     <strong>After sending a few requests, let's take a look at the file <i>log.txt</i></strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
     <img src={server_logsImg} alt="server_logs" />
   </div>
 </div>
 
 And what will happen if the writing to the file is not finished yet, and the server receives another request? Looking ahead, I will say that file system operations are asynchronous streams, and considering the single-threaded JS, they must block the server until completion. But this is not the case, and we can see this by bombarding the server with requests, and it will not cancel or delay any of them.
-<div class="bubble small subtle">
+<div className="bubble small subtle">
 
   [Article "Node.js Streams: Everything you need to know"](https://medium.com/edge-coders/node-js-streams-everything-you-need-to-know-c9141306be93)
     
 </div>
 
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-4-5" />
-  <label class="summary" for="accordion-4-5">
+  <label className="summary" htmlFor="accordion-4-5">
     <strong>And why is that? Now we should finally understand how the eventloop is implemented in Node</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
     The circle in the center is a JS thread and it always performs only one operation at a time. On the left we see a queue of requests waiting to be fulfilled. When a synchronous request is received, it starts to be processed and upon completion starts the next request. In cases where the request causes asynchronous operations, it is delegated to the library [libuv](https://github.com/libuv/libuv), which processes it in a separate thread, and upon completion, puts the callback in the same queue.
     <img src={eventloopImg} alt="eventloop" />
-    <div class="bubble small subtle">
+    <div className="bubble small subtle">
       I tried to explain as simply as possible, but I'm not sure that's enough, so here's a more detailed [video](https://youtu.be/8aGhZQkoFbQ)       
     </div>
   </div>
@@ -737,7 +732,7 @@ And what will happen if the writing to the file is not finished yet, and the ser
 
 Let's return to our code. It looks too cumbersome for the functionality it performs because it works with too [low-level](https://en.wikipedia.org/wiki/Low-level_programming_language) operations. We will talk in the next block about how to move to a higher level of abstraction with Express.js.
 
-<div class="bubble small subtle">
+<div className="bubble small subtle">
   [Repository with the code from this block](https://github.com/uliana-lobanova/nodejs-lecture/tree/nodejs-basics)
 </div>
 
@@ -762,14 +757,14 @@ Create a new file and write the code for a basic HTTP server:
 
 <SnippetJS03 />
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-5-1" />
-  <label class="summary" for="accordion-5-1">
+  <label className="summary" htmlFor="accordion-5-1">
     <strong>Let's run the code and check if it works</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
-<SnippetShell04 />
+    <SnippetShell04 />
 
     <img src={express_getImg} alt="express_get" />
     <img src={express_postImg} alt="express_post" />
@@ -782,16 +777,19 @@ Everything works! If we try to send requests to routes that aren't described in 
 <SnippetJS04 />
 
 5 lines, and how many benefits! This is how Express.js conquered the world. Currently, there are a huge number of npm packages for express, designed to solve various cases. Let's consider one of these - parsing the body of the query. Earlier to do this, we would need to add a package (officially recognized Best Practice) [body-parser](https://www.npmjs.com/package/body-parser). But since it was widely used,  the methods from it has been re-added under the express methods to provide request body parsing support out-of-the-box. 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-5-2" />
-  <label class="summary" for="accordion-5-2">
+  <label className="summary" htmlFor="accordion-5-2">
     <strong>Embed <b>body-parser</b></strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
+
+    <SnippetShell05 />
 
     <SnippetJS05 />
 
-    <SnippetShell05 />
+    <SnippetShell06 />
+
 
     Send PUT-request with body:
 
@@ -805,7 +803,7 @@ Everything works! If we try to send requests to routes that aren't described in 
 
 We explored enough basic **express** functionality to start with, so now we can take a look at how all this code would be scaled in real life.
 
-<div class="bubble small subtle">
+<div className="bubble small subtle">
 
   [Repository with the code from this block](https://github.com/uliana-lobanova/nodejs-lecture/tree/expressjs-basics)
 
@@ -827,14 +825,14 @@ We explored enough basic **express** functionality to start with, so now we can 
 
 And the best part 🍎. Here we will talk about the structure of the project, what, where, and why. For a quick start of a project, we can use [express-generator](https://www.npmjs.com/package/express-generator), which is created by the Express team and generates a default starter on **Express.js**. It should be installed globally to be accessible anywhere from any project. To do this, add the `-g` flag to the installation command: 
 
-<SnippetShell06 />
+<SnippetShell07 />
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-1" />
-  <label class="summary" for="accordion-6-1">
+  <label className="summary" htmlFor="accordion-6-1">
     <strong>After a successful installation, you can check its functionality by the classic method - find out the version or run help 🙃</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
 Version:
 
@@ -849,44 +847,45 @@ Help:
 
 
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-2" />
-  <label class="summary" for="accordion-6-2">
+  <label className="summary" htmlFor="accordion-6-2">
     <strong>Well and now we will generate the project without view templates and with the .gitignore file</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
     <img src={express_generatorImg} alt="express_generator" />
   </div>
 </div>
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-3" />
-  <label class="summary" for="accordion-6-3">
+  <label className="summary" htmlFor="accordion-6-3">
     <strong>Let's see what happened</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
     <img src={express_generator_starterImg} alt="express_generator_starter" />
   </div>
 </div>
 
 Pay attention to the `scripts` field in _package.json_, which contains npm scripts for working with the application. In order to start the server, we will need to use the command `npm start`.
 
-<div class="bubble small subtle">
+<div className="bubble small subtle">
 
   Article ["Task automation with npm run"](https://blog.nakulrajput.com/task-automation-with-npm-run/)
     
 </div>
 
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-4" />
-  <label class="summary" for="accordion-6-4">
+  <label className="summary" htmlFor="accordion-6-4">
     <strong>For the simplest API server, we don't need the <i>/public</i> folder and template rendering initialization, so we'll just delete them.</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
 1. delete the folder _/public_ with all the contents
 2. make changes to _/routes/index.js_
+
 <SnippetJS06 />
 
 3. make changes to _app.js_
@@ -899,116 +898,122 @@ Pay attention to the `scripts` field in _package.json_, which contains npm scrip
 
 Currently, our project implements only one layer - **routes**, which should be responsible **ONLY** for working with HTTP-requests.
 
-<div class="bubble small subtle">
+<div className="bubble small subtle">
 
 Why so radical? _...should be responsible **ONLY** for working..._. Proper layering of the application is a guarantee of code that will be easy to maintain due to the convenient development and clear structure. If the layer only works with HTTP requests, then there should be no business logic or data handling, and vice versa.
 
 </div>
 
-Let's make our server smart and give it <span class="tooltip" data-tooltip="🕵️ 007 🔫"><u>logic, business logic</u></span>. In the world of Express applications, the layer that is responsible for business logic is called  **services**, and because it is not generated automatically, we will create it manually.
+Let's make our server smart and give it <span className="tooltip" data-tooltip="🕵️ 007 🔫"><u>logic, business logic</u></span>. In the world of Express applications, the layer that is responsible for business logic is called  **services**, and because it is not generated automatically, we will create it manually.
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-5" />
-  <label class="summary" for="accordion-6-5">
+  <label className="summary" htmlFor="accordion-6-5">
     <strong>Creating and testing the services layer</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
 
-1. Create a folder _/services_  
-2. Create a file _/services/user.service.js_  
-3. Add a function to the file and export it:
-<SnippetJS08 />
-4 Import the function from the service to the router, use it to get a user's name.
-<SnippetJS09 />
-5) Run the server `npm start`  
-6) Send POST-request to the _/users_ route and take a look at the response that contains the sent name
+    1. Create a folder _/services_  
+    2. Create a file _/services/user.service.js_  
+    3. Add a function to the file and export it:
 
-  <img src={service_testImg} alt="service_test" />
+    <SnippetJS08 />
+
+    4 Import the function from the service to the router, use it to get a user's name.
+
+    <SnippetJS09 />
+
+    5. Run the server `npm start`  
+    6. Send POST-request to the _/users_ route and take a look at the response that contains the sent name
+
+    <img src={service_testImg} alt="service_test" />
   </div>
 </div>
 
 Now the server is able to do something, time to think about how we want to store data! There is a **repositories** layer for this, and we are going to implement it.
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-6" />
-  <label class="summary" for="accordion-6-6">
+  <label className="summary" htmlFor="accordion-6-6">
     <strong>Creating and testing the repositories layer</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
 
-1. Create folder _/repositories_  
-2. Create file _/repositories/user.repository.js_  
-3. Add a function to the file and export it:
+    1. Create folder _/repositories_  
+    2. Create file _/repositories/user.repository.js_  
+    3. Add a function to the file and export it:
 
-<SnippetJS10 />
+    <SnippetJS10 />
 
-<div class="bubble small subtle">
+    <div className="bubble small subtle">
 
-  We won't deal with a database in this lecture, so our code is just a simulation of working with it. In reality, this layer should contain all the work with data: their retrieval, saving, and updating.
+      We won't deal with a database in this lecture, so our code is just a simulation of working with it. In reality, this layer should contain all the work with data: their retrieval, saving, and updating.
 
-</div>
+    </div>
 
-4. Import the function from the repository into the service and add the function `saveName ()`:
-<SnippetJS11 />
+    4. Import the function from the repository into the service and add the function `saveName ()`:
 
-5. Import the function from the service into the router and use it to work with the request body:
-<SnippetJS12 />
-6. Run the server `npm start`  
-7. Send POST-request to the _/users_ route and take a look at the response "Data is saved"
+    <SnippetJS11 />
 
-  <img src={repository_testImg} alt="repository_test" />
+    5. Import the function from the service into the router and use it to work with the request body:
+    <SnippetJS12 />
+    6. Run the server `npm start`  
+    7. Send POST-request to the _/users_ route and take a look at the response "Data is saved"
+
+    <img src={repository_testImg} alt="repository_test" />
   </div>
 </div>
 
 And the last layer is **middlewares**, examples of which we have already seen in this project. Let's find out how it is configured and what it does.
 
-<div class="details">
+<div className="details">
   <input type="checkbox" id="accordion-6-7" />
-  <label class="summary" for="accordion-6-7">
+  <label className="summary" htmlFor="accordion-6-7">
     <strong>Creating and testing the middlewares layer</strong>
   </label>
-  <div class="details-body">
+  <div className="details-body">
 
 
-1. Create folder _/middlewares_  
-2. Create file _/middlewares/auth.middleware.js_  
-3. Add a function to the file and export it:
+    1. Create folder _/middlewares_  
+    2. Create file _/middlewares/auth.middleware.js_  
+    3. Add a function to the file and export it:
 
-<SnippetJS13 />
-
-
-<div class="bubble small subtle">
-
-  **middlewares** - perform some actions on data coming through them and then they either pass the data to the next function in a stack or they end the request-response cycle. The middleware function takes three arguments: (req, res, next). We are already familiar with the first two objects, and the third is the callback function, which informs that all current operations are complete and we can proceed to the next step.
-
-</div>
+    <SnippetJS13 />
 
 
-4. Import the middleware to the router and use it to secure the GET route:
-<SnippetJS14 />
+    <div className="bubble small subtle">
 
-<div class="bubble small subtle">
+      **middlewares** - perform some actions on data coming through them and then they either pass the data to the next function in a stack or they end the request-response cycle. The middleware function takes three arguments: (req, res, next). We are already familiar with the first two objects, and the third is the callback function, which informs that all current operations are complete and we can proceed to the next step.
 
-  To initialize the middleware, you can use the `app.use` syntax, or simply pass it as a second argument to router.
+    </div>
 
-</div>
 
-5. Run the server `npm start`  
-6. Send GET-request to the _/users_ route with the header `Authorization: user` and take a look at response - 401 status
+    4. Import the middleware to the router and use it to secure the GET route:
+    
+    <SnippetJS14 />
 
-  <img src={middleware_test1Img} alt="middleware_test1" />
+    <div className="bubble small subtle">
 
-7. Send GET-request to the _/users_ route with the header `Authorization: admin` and take a look at response - we passed the check
+      To initialize the middleware, you can use the `app.use` syntax, or simply pass it as a second argument to router.
 
-  <img src={middleware_test2Img} alt="middleware_test2" />
+    </div>
+
+    5. Run the server `npm start`  
+    6. Send GET-request to the _/users_ route with the header `Authorization: user` and take a look at response - 401 status
+
+      <img src={middleware_test1Img} alt="middleware_test1" />
+
+    7. Send GET-request to the _/users_ route with the header `Authorization: admin` and take a look at response - we passed the check
+
+    <img src={middleware_test2Img} alt="middleware_test2" />
   </div>
 </div>
 
 And that's it, we covered the basics of Node.js applications structure. Now you're a true full-stack 😎
 
-<div class="bubble small subtle">
+<div className="bubble small subtle">
 
   [Repository with the code from this block](https://github.com/uliana-lobanova/nodejs-lecture/tree/project-structure)
 
@@ -1036,7 +1041,7 @@ That's it, congratulations! The lecture is completely scrolled, you don't need t
 
 I was told that you all know how to deploy client applications, so why not learn to deploy Node.js servers?
 
-<div class="bubble">
+<div className="bubble">
   Here is a <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true">link to the official <strong>Heroku</strong> tutorial</a> - take a look and try. You may also want to deploy your homework 😉
 </div>
 
@@ -1046,7 +1051,7 @@ I was told that you all know how to deploy client applications, so why not learn
 >
   <b>The End!</b>
 </ThatsAllFolks>
-<div class="bubble">
+<div className="bubble">
   	Leave your questions and feedback in the lecture chat at <a href="https://academy.binary-studio.com/"><strong>Binary Studio Academy</strong></a>. Good luck and don't forget about deadlines! 😉 
 </div>
 
