@@ -80,7 +80,6 @@ a, ins, u {
 a {
   color: #5755d9;
   outline: none;
-  transition: 5s cubic-bezier(0.075, 0.82, 0.165, 1);
   text-decoration: none;
 }
 

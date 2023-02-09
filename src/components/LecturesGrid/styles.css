@@ -33,7 +33,7 @@
   align-items: flex-end;
   display: flex;
 }
-.lectureLink {
+/* .lectureLink {
   text-decoration: none;
   position: relative;
   display: inline-block;
@@ -56,4 +56,4 @@
   left: 0;
   width: 100%;
   transition: width 0.3s ease;
-}
+} */

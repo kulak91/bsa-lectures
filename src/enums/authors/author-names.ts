@@ -17,7 +17,8 @@ export enum AuthorNames {
 
   PAVEL_NEMCHENKO = 'Павел Немченко',
 
-  ALEXANDR_TOVMACH = 'Александр Товмач',
+  ALEXANDR_TOVMACH_RU = 'Александр Товмач',
+  ALEXANDR_TOVMACH_UA = 'Олександр Товмач',
 
   ROMAN_SAHAN = 'Роман Саган',
 
@@ -25,4 +26,6 @@ export enum AuthorNames {
   VOLODYMYR_KUSHNIR_RU = 'Владимир Кушнир',
 
   IVAN_HEDZ = 'Ivan Hedz',
+
+  ULIANA_LOBANOVA = 'Uliana Lobanova',
 }
