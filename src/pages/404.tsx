@@ -19,7 +19,7 @@ const codeStyles = {
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <main style={pageStyles}>
-      <p style={{ textAlign: 'center', marginBottom: 48 }}>
+      <p style={{ marginBottom: 48 }}>
         <ShrugMessage>
           <h4>— Sorry, this page hasn’t hatched yet.</h4>
           <p>
@@ -29,6 +29,8 @@ const NotFoundPage: React.FC<PageProps> = () => {
             place.
           </p>
           <p>We humbly ask you to check it out later!</p>
+          <br />
+          <Link to="/">Go home</Link>
         </ShrugMessage>
         <br />
         {process.env.NODE_ENV === 'development' ? (
@@ -39,8 +41,6 @@ const NotFoundPage: React.FC<PageProps> = () => {
             <br />
           </>
         ) : null}
-        <br />
-        <Link to="/">Go home</Link>
       </p>
     </main>
   );
