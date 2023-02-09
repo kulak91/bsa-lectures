@@ -15,14 +15,14 @@ import {
   faGithub,
   faTelegram
 } from "@fortawesome/free-brands-svg-icons";
-import JavaOOSnippet from '../snippets/java-oo.mdx';
-import JavaFISnippet from '../snippets/java-functional-interface.mdx';
-import JavaStreamSnippet from '../snippets/java-stream-api.mdx';
-import JavaOptionalSnippet from '../snippets/java-optional.mdx';
-import JavaPSDIMSnippet from '../snippets/java-psdim.mdx';
-import JavaModuleSnippet from '../snippets/java-module-system.mdx';
-import JavaTrycatchSnippet from '../snippets/java-try-catch.mdx';
-import JavaHTTPClientSnippet from '../snippets/java-http'
+import JavaOOSnippet from '../assets/snippets/java-oo.mdx';
+import JavaFISnippet from '../assets/snippets/java-functional-interface.mdx';
+import JavaStreamSnippet from '../assets/snippets/java-stream-api.mdx';
+import JavaOptionalSnippet from '../assets/snippets/java-optional.mdx';
+import JavaPSDIMSnippet from '../assets/snippets/java-psdim.mdx';
+import JavaModuleSnippet from '../assets/snippets/java-module-system.mdx';
+import JavaTrycatchSnippet from '../assets/snippets/java-try-catch.mdx';
+import JavaHTTPClientSnippet from '../assets/snippets/java-http'
 import { kyryloLesohorskyi2020Avatar } from "~/assets/images/avatars/intro-rounded";
 
 <div>
@@ -33,7 +33,7 @@ import { kyryloLesohorskyi2020Avatar } from "~/assets/images/avatars/intro-round
 
 <Language
   currentLanguage="ru"
-  languages={{"ru": "lectures/modern-java", "ua": "lectures/modern-java/"}
+  languages={{"ru": "lectures/modern-java/ru", "ua": "lectures/modern-java/"}
 }/>
 
 <VideoWrapper duration="1 час 24 мин.">
@@ -399,7 +399,9 @@ Java - не единственный JVM язык. Существуют и др�
  
 Пакетные менеджеры позволяют переиспользовать существующий код и библиотеки с лёгкостью. "Внешний" по отношению к проекту код называется `зависимостью`. 
 В мире Java активно используют два пактеных менеджера: **Gradle** и **Maven**
- 
+
+<br />
+
  
 | Gradle                                       | Maven                                                  |
 | -------------------------------------------- |:------------------------------------------------------:|	
@@ -407,6 +409,8 @@ Java - не единственный JVM язык. Существуют и др�
 | Gradle Scripts are shorter and cleaner.      | Maven scripts are a bit lengthy as compared to Gradle. | 
 | DSL based                                    | XML-based                                              |
 | Supports incremental compilation             | Does not supports incremental compilation              |
+
+<br />
 
 #### Примеры gradle комманд
 
