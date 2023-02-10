@@ -10,4 +10,3 @@ export { default as ThatsAllFolks } from './thats-all-folks/ThatsAllFolks';
 export { default as VideoWrapper } from './video-wrapper/VideoWrapper';
 export { default as ShrugMessage } from './shrug-message/ShrugMessage';
 export { default as Flute } from './flute/Flute';
-export { default as DownloadZipButton } from './download-zip-button/DownloadZipButton';
