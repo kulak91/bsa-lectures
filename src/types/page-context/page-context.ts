@@ -9,8 +9,12 @@ type Meta = {
   hiddenFromMainPage: boolean;
 };
 
-type PageContext = {
+type LecturesContext = {
   frontmatter: Meta;
 };
 
-export { PageContext };
+type PageContext = {
+  frontmatter?: Meta;
+};
+
+export { LecturesContext, PageContext };

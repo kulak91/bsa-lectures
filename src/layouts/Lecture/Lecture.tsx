@@ -1,7 +1,7 @@
 import React from 'react';
 import { isDateInThePast } from '~/utils';
 
-import { PageContext } from '~/types';
+import { LecturesContext } from '~/types';
 import { Footer, Header } from '~/components';
 
 import './Lecture.scss';
@@ -9,22 +9,13 @@ import 'prismjs/themes/prism.css';
 
 type LectureProps = {
   children: React.ReactNode;
-  pageContext: PageContext;
+  pageContext: LecturesContext;
 };
 
 const Lecture = ({
   children,
   pageContext: {
-    frontmatter: {
-      description,
-      hiddenFromMainPage,
-      keywords,
-      orderId,
-      publishedAt,
-      title,
-      author,
-      duration,
-    },
+    frontmatter: { publishedAt, title },
   },
 }: LectureProps) => {
   const isPublished = isDateInThePast(publishedAt);

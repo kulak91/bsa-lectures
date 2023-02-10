@@ -2,17 +2,12 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { isDateInThePast } from '~/utils';
 import { Avatar } from '../common';
-import { LectureList } from '~/data/homepage/lectures-list';
 import { useGetLectures } from '~/hooks/use-get-lectures';
 
 import './styles.css';
 
-type LecturesProps = {
-  lectures: LectureList[];
-};
-const LecturesGrid = ({ lectures }: LecturesProps) => {
+const LecturesGrid = () => {
   const edges = useGetLectures();
-  console.log('edges', edges);
   return (
     <div className="lectures-wrapper">
       {edges.map(
