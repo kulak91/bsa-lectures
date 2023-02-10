@@ -28,4 +28,15 @@ type SiteMetaQuery = {
   };
 };
 
-export { LecturesQuery, SiteMetaQuery };
+type ZipQueryQuery = {
+  readonly allFile: {
+    readonly edges: ReadonlyArray<{
+      readonly node: {
+        readonly name: string;
+        readonly publicURL: string;
+      };
+    }>;
+  };
+};
+
+export { LecturesQuery, SiteMetaQuery, ZipQueryQuery };
