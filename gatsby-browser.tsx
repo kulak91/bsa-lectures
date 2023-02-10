@@ -14,6 +14,7 @@ import {
   ThatsAllFolks,
   VideoWrapper,
   Flute,
+  DownloadZipButton,
 } from '~/components/common';
 
 import '~/assets/styles/index.css';
@@ -31,6 +32,7 @@ const components = {
   ThatsAllFolks,
   VideoWrapper,
   Flute,
+  DownloadZipButton,
 };
 
 const wrapPageElement = ({
