@@ -13,6 +13,7 @@ import {
   ulianaLobanova2021Avatar,
   serhiiYanchuk2023Avatar,
 } from '~/assets/images/avatars/intro-rounded';
+
 import { AuthorName } from '~/enums';
 
 const nameToImage = {
