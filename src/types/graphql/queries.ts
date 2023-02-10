@@ -1,6 +1,6 @@
 import { Author } from '~/data/homepage/lectures-list';
 
-export type LecturesQUery = {
+type LecturesQuery = {
   readonly allMdx: {
     readonly edges: ReadonlyArray<{
       readonly node: {
@@ -17,3 +17,15 @@ export type LecturesQUery = {
     }>;
   };
 };
+
+type SiteMetaQuery = {
+  readonly site: {
+    readonly siteMetadata: {
+      readonly title: string;
+      readonly description: string;
+      readonly author: string;
+    };
+  };
+};
+
+export { LecturesQuery, SiteMetaQuery };
