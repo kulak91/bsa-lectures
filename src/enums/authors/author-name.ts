@@ -1,4 +1,4 @@
-export enum AuthorName {
+enum AuthorName {
   VIKTORIIA_VASYLENKO_EN = 'Viktoriia Vasylenko',
   VIKTORIIA_VASYLENKO_UA = 'Вікторія Василенко',
   VIKTORIIA_VASYLENKO_RU = 'Виктория Василенко',
@@ -33,3 +33,5 @@ export enum AuthorName {
   SERHII_YANCHUK_UA = 'Сергій Янчук',
   SERHII_YANCHUK_EN = 'Serhii Yanchuk',
 }
+
+export { AuthorName };
