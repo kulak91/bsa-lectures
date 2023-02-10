@@ -1,7 +1,6 @@
 export { default as Avatar } from './avatar/Avatar';
 export { default as Block } from './block/Block';
 export { default as Language } from './language/Language';
-export { default as IntroBlueBubble } from './IntroBlueBubble/IntroBlueBubble';
 export { default as TimelineOfContents } from './timeline-of-contents/TimelineOfContents';
 export { default as Level } from './level/Level';
 export { default as FacebookMessage } from './facebook-message/FacebookMessage';
