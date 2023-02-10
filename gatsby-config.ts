@@ -58,14 +58,7 @@ const config: GatsbyConfig = {
       },
       __key: 'pages',
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'zip',
-        path: `${__dirname}/src/assets/zip`,
-      },
-      __key: 'zip',
-    },
+
     {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
