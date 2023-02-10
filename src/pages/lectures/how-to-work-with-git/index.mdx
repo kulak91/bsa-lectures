@@ -10,7 +10,6 @@ hiddenFromMainPage: false
 ---
 
 import { Lecture } from "~/layouts";
-import { viktoriiaVasylenko2021Avatar } from "~/assets/images/avatars/intro-rounded";
 
 <div>
   <h1>
@@ -28,9 +27,7 @@ import { viktoriiaVasylenko2021Avatar } from "~/assets/images/avatars/intro-roun
 
 <div>
   <div className="author">
-      <div className="avatar-wrapper">
-        <object className="avatar-object" role="img" data={viktoriiaVasylenko2021Avatar} aria-label="Viktoriia Vasylenko"></object>
-      </div>
+      <Avatar name="Viktoriia Vasylenko" />
       <div className="profile">
         <h3 className="name">Вікторія Василенко</h3>
         <p className="about">
@@ -61,7 +58,7 @@ import { viktoriiaVasylenko2021Avatar } from "~/assets/images/avatars/intro-roun
 </div>
 
 <VideoWrapper duration="38m 2s">
-  <iframe src="https://www.youtube.com/embed/HJ7NW6zatXo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/HJ7NW6zatXo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 </VideoWrapper>
 
 <Level id="setting-up-the-repository" number="1" name="Налаштування репозиторію" difficulty="Beginner" objectives="How to create and clone the repo" />
@@ -139,3 +136,4 @@ import { viktoriiaVasylenko2021Avatar } from "~/assets/images/avatars/intro-roun
 2. `git reset <commit>` очищує історію комітів впритул до заданого.
 
 export default Lecture;
+export { Head } from '~/components';

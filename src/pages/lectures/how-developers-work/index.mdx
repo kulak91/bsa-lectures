@@ -6,7 +6,7 @@ description: "Воркшоп по <strong><code>git</code></strong> та <strong
 keywords: ["hola", "guapa"]
 duration: "1 год 28 хв"
 publishedAt: "2022-01-01T00:00:00"
-hiddenFromMainPage: false
+hiddenFromMainPage: true
 ---
 
 import { Lecture } from "~/layouts";
@@ -74,11 +74,11 @@ import {
 <div className="messages">
   Отже, уявімо собі таку ситуацію — студент підписує контракт із аутсорсинговою чи продуктовою компанією, наступного ранку приходить у офіс/коворк/cloffice ("closet office"), вмикає комп'ютер, запускає месенджер (наприклад, Slack), і отримує своє перше мега-завдання ("таску") від замовника (
   <input type="radio" className="messages__from" name="from" id="ryu" defaultChecked />
-  <label for="ryu">Ryu</label>
+  <label htmlFor="ryu">Ryu</label>
   <input type="radio" className="messages__from" name="from" id="donald-trump" />
-  <label for="donald-trump">Donald Trump</label>
+  <label htmlFor="donald-trump">Donald Trump</label>
   <input type="radio" className="messages__from" name="from" id="you" />
-  <label for="you">"я сам собі замовник!"</label>
+  <label htmlFor="you">"я сам собі замовник!"</label>
   <SlackMessage
     senderId="ryu"
     senderName="Ryu"
