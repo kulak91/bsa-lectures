@@ -3,7 +3,6 @@ import { WrapPageElementBrowserArgs } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import {
   Avatar,
-  Block,
   Language,
   TimelineOfContents,
   FacebookMessage,
@@ -22,7 +21,6 @@ import '~/assets/styles/index.css';
 const components = {
   Avatar,
   Accordion,
-  Block,
   Language,
   Level,
   RadarChart,
