@@ -1,10 +1,10 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { LecturesQUery } from '~/types/graphql/queries';
+import { LecturesQuery } from '~/types';
 
-export const useGetLectures = () => {
+const useGetLectures = () => {
   const {
     allMdx: { edges },
-  } = useStaticQuery<LecturesQUery>(
+  } = useStaticQuery<LecturesQuery>(
     graphql`
       query MyQuery {
         allMdx(
@@ -32,3 +32,5 @@ export const useGetLectures = () => {
   );
   return edges;
 };
+
+export { useGetLectures };

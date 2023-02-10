@@ -1,30 +1,15 @@
 import React from 'react';
 import { isDateInThePast } from '~/utils';
-// import { SEO, Header, Footer, ShrugMessage } from "..";
-// import { isDateInThePast } from "../../utils";
 
-import { Footer } from '~/components';
+import { PageContext } from '~/types';
+import { Footer, Header } from '~/components';
 
 import './Lecture.scss';
 import 'prismjs/themes/prism.css';
 
-type Meta = {
-  author?: string;
-  orderId: number;
-  title: string;
-  duration?: string;
-  description: string;
-  keywords: string[];
-  publishedAt: string;
-  hiddenFromMainPage: boolean;
-};
-
-type FrontMatter = {
-  frontmatter: Meta;
-};
 type LectureProps = {
   children: React.ReactNode;
-  pageContext: FrontMatter;
+  pageContext: PageContext;
 };
 
 const Lecture = ({
@@ -48,7 +33,7 @@ const Lecture = ({
       <div className="container grid-lg">
         <div className="columns">
           <div className="column">
-            {/* <Header /> */}
+            <Header />
             <article className="content">
               {isPublished ? (
                 <>{children}</>
@@ -71,3 +56,4 @@ const Lecture = ({
 };
 
 export default Lecture;
+export { Head } from '~/components/head/Head';
