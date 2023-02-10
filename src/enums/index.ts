@@ -1,1 +1,1 @@
-export { AuthorNames } from './authors/author-names';
+export { AuthorName } from './authors/author-name';

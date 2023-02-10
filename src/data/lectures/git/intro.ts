@@ -1,5 +1,5 @@
 import { IntroBlueBubbleProps } from '~/components/common/IntroBlueBubble/IntroBlueBubble';
-import { AuthorNames } from '~/enums';
+import { AuthorName } from '~/enums';
 
 const intro = {
   name: 'Вікторія Василенко',
@@ -13,7 +13,7 @@ type IntroBubble = {
 };
 
 const introEN: IntroBlueBubbleProps = {
-  author: AuthorNames.VIKTORIIA_VASYLENKO_EN,
+  author: AuthorName.VIKTORIIA_VASYLENKO_EN,
   about:
     'Viktoriia works at Binary Studio as a Full stack developer after finishing Binary Studio Academy in 2020.',
   title: 'Hi, student!',
@@ -31,7 +31,7 @@ const introEN: IntroBlueBubbleProps = {
 };
 
 const introUA: IntroBlueBubbleProps = {
-  author: AuthorNames.VIKTORIIA_VASYLENKO_UA,
+  author: AuthorName.VIKTORIIA_VASYLENKO_UA,
   about:
     'Вікторія працює в Binary Studio як Full stack developer після закінчення Binary Studio Academy в 2020.',
   title: 'Привіт!',
