@@ -2,7 +2,7 @@ import * as React from 'react';
 import { PageProps } from 'gatsby';
 import { Footer, Header, LecturesGrid, LogoLink } from '~/components';
 
-import '~/assets/styles/index.css';
+import '~/assets/stylesheets/index.css';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (

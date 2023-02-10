@@ -17,7 +17,7 @@ import {
   DownloadZipButton,
 } from '~/components/common';
 
-import '~/assets/styles/index.css';
+import '~/assets/stylesheets/index.css';
 
 const components = {
   Avatar,
