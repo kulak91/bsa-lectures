@@ -1,5 +1,5 @@
 import React from 'react';
-import Accordion from '../Accordion/Accordion';
+import Accordion from '../accordion/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo } from '@fortawesome/pro-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/pro-regular-svg-icons';

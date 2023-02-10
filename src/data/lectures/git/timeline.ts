@@ -1,4 +1,4 @@
-import { TimeLineProps } from '~/components/common/TimelineOfContents/TimelineOfContents';
+import { TimeLineProps } from '~/components/common/timeline-of-contents/TimelineOfContents';
 
 const ua: TimeLineProps = {
   headerClass: 'tableMargined',
