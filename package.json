@@ -17,7 +17,9 @@
     "typecheck": "tsc --noEmit",
     "lint:js": "npx eslint . --resolve-plugins-relative-to . --fix",
     "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
-    "lint": "eslint . --ext md,mdx"
+    "pre-commit": "lint-staged",
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
@@ -64,6 +66,12 @@
   },
   "engines": {
     "node": "18.x"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,scss},gatsby*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "overrides": {
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
