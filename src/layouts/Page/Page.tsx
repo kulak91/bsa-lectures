@@ -1,31 +1,23 @@
 import React from 'react';
-// import { SEO, Header, Footer } from "..";
+import { Footer, Header } from '~/components';
 
 type Meta = {
   title: string;
   description: string;
   keywords: string[];
 };
-type PageProps = {
+type Props = {
   children: React.ReactNode;
   metadata: Meta;
 };
-const Page = ({
-  children,
-  metadata: { title, description, keywords },
-}: PageProps) => (
+const Page: React.FC<Props> = ({ children }) => (
   <>
-    {/* <SEO
-      title={title}
-      description={description.replace(/<(?:.|\n)*?>/gm, "")}
-      keywords={keywords}
-    /> */}
     <div className="container grid-lg">
       <div className="columns">
         <div className="column">
-          {/* <Header /> */}
+          <Header />
           <article className="content">{children}</article>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </div>
@@ -33,3 +25,5 @@ const Page = ({
 );
 
 export default Page;
+
+export { Head } from '~/components/head/Head';
