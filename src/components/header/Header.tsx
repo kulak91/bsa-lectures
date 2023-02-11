@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import './Header.css';
 
-const Header = () => (
+const Header: React.FC = () => (
   <header className="hero hero-sm">
     <nav className="navbar">
       <div className="navbar-section">

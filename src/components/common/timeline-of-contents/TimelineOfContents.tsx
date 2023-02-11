@@ -13,12 +13,12 @@ export type TimeLineProps = {
   timeline: Timeline[];
 };
 
-const TimelineOfContents = ({
+const TimelineOfContents: React.FC<TimeLineProps> = ({
   timeline = [],
   headerClass,
   headerTitle,
   ...rest
-}: TimeLineProps) => (
+}) => (
   <div id="table-of-contents" className={`table-of-contents ${headerClass}`}>
     {headerTitle && (
       <h2>

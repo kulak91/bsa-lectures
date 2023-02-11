@@ -2,14 +2,12 @@ import React from 'react';
 import { nameToImage } from './utils/name-to-image';
 import { Author } from '~/data/homepage/lectures-list';
 
-import './avatar.css';
-
-type AvatarProps = {
+type Props = {
   name: Author;
   className?: string;
 };
 
-const Avatar = ({ name, className }: AvatarProps) => {
+const Avatar: React.FC<Props> = ({ name, className }) => {
   const Avatar = nameToImage[name];
   return (
     <div className="avatar-wrapper">

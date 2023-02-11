@@ -10,18 +10,18 @@ import 'chartjs-plugin-dragdata';
 
 import './RadarChart.css';
 
-type ChartProps = {
+type Props = {
   labels: string[];
   datasets: ChartDatasets[];
 };
 
-const RadarChart = ({ labels, datasets }: ChartProps) => {
+const RadarChart: React.FC<Props> = ({ labels, datasets }) => {
   const [chartData, setChartData] = useState({ labels, datasets });
   const [chart, setChart] = useState<Chart | null>(null);
   const [initiated, setInitiated] = useState<boolean>(false);
   const chartElement = useRef<HTMLCanvasElement>(null);
 
-  const resetMyGrades = () => {
+  const resetMyGrades = (): void => {
     setChartData((prevData) => {
       const newData = { ...prevData };
       newData.datasets[0].data = [...prevData.datasets[1].data];
@@ -29,7 +29,7 @@ const RadarChart = ({ labels, datasets }: ChartProps) => {
     });
   };
 
-  const copyGradesByCategories = (grades: number[]) => {
+  const copyGradesByCategories = (grades: number[]): void => {
     copy(
       feedbackStarters[
         Math.floor(Math.random() * (feedbackStarters.length - 1))
@@ -37,11 +37,11 @@ const RadarChart = ({ labels, datasets }: ChartProps) => {
     );
   };
 
-  const copyFinalGrade = (grade: string) => {
+  const copyFinalGrade = (grade: string): void => {
     copy(grade);
   };
 
-  const createOptions = () => {
+  const createOptions = (): object => {
     return {
       type: 'radar',
       data: { ...chartData },
@@ -54,7 +54,7 @@ const RadarChart = ({ labels, datasets }: ChartProps) => {
           datasetIndex: number,
           index: number,
           value: number,
-        ) =>
+        ): void =>
           setChartData((prev) => {
             const newChartData = { ...prev };
             newChartData.datasets[datasetIndex].data = [
@@ -131,13 +131,13 @@ const RadarChart = ({ labels, datasets }: ChartProps) => {
       )}
       <button
         className="grades-by-categories"
-        onClick={() => copyGradesByCategories(myGrades)}
+        onClick={(): void => copyGradesByCategories(myGrades)}
       >
         <FontAwesomeIcon icon={faCopy} className="icon" />
       </button>
       <button
         className="final-grade"
-        onClick={() =>
+        onClick={(): void =>
           copyFinalGrade(String(roundToTwoDecimals(myGradesAverage)))
         }
       >

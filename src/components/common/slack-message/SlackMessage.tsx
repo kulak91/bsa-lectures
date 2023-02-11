@@ -1,10 +1,9 @@
 import React from 'react';
+import { TimeUnit } from './constants/time-unit';
 
 import './SlackMessage.css';
 
-const MINUTE = 1000 * 60;
-
-const SlackMessage = ({
+const SlackMessage: React.FC<SlackMessageProps> = ({
   senderId = '',
   senderName = '',
   senderAvatarUrl = '',
@@ -13,12 +12,12 @@ const SlackMessage = ({
   reactions = [],
   replies = [],
   ...rest
-}: SlackMessageProps) => {
+}) => {
   const repliesCount = Math.floor(Math.random() * 10) + 7;
-  const senderTime = new Date(senderDate - 130 * MINUTE)
+  const senderTime = new Date(senderDate - 130 * TimeUnit.MINUTE)
     .toTimeString()
     .slice(0, 5);
-  const lastReplyTime = new Date(senderDate - 116 * MINUTE)
+  const lastReplyTime = new Date(senderDate - 116 * TimeUnit.MINUTE)
     .toTimeString()
     .slice(0, 5);
   return (

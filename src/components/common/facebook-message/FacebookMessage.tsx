@@ -1,7 +1,5 @@
 import React from 'react';
-// import PropTypes from "prop-types";
 import classNames from 'classnames';
-import './FacebookMessage.css';
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +7,7 @@ type Props = {
   subtle: boolean;
 };
 
-const FacebookMessage = ({ children, small, subtle }: Props) => {
+const FacebookMessage: React.FC<Props> = ({ children, small, subtle }) => {
   return (
     <div
       className={classNames('bubble', {

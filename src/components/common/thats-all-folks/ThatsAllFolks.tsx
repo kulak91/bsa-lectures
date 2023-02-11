@@ -3,16 +3,15 @@ import thatsAllFolksAudio from '~/assets/audio/thats-all-folks.mp3';
 
 import './ThatsAllFolks.css';
 
-const ThatsAllFolks = ({
-  source,
-  children,
-}: {
+type Props = {
   source?: string;
   children?: React.ReactNode;
-}) => {
+};
+
+const ThatsAllFolks: React.FC<Props> = ({ source, children }) => {
   const audio = useRef<HTMLAudioElement | null>(null);
-  const play = () => audio?.current?.play();
-  const pause = () => audio?.current?.pause();
+  const play = (): Promise<void> | undefined => audio?.current?.play();
+  const pause = (): void => audio?.current?.pause();
 
   return (
     <h4 className="thats-all-folks">

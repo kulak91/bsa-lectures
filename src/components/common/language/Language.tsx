@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
+
 import './Language.css';
 
-type LanguageProps = {
+type Props = {
   currentLanguage: string;
   languages: Record<string, string>;
 };
-const Language = ({ languages, currentLanguage }: LanguageProps) => (
+const Language: React.FC<Props> = ({ languages, currentLanguage }) => (
   <div className="lang-menu">
     <div>
       Translated into:

@@ -6,7 +6,7 @@ import { useGetLectures } from '~/hooks/use-get-lectures';
 
 import './styles.css';
 
-const LecturesGrid = () => {
+const LecturesGrid: React.FC = () => {
   const edges = useGetLectures();
   return (
     <div className="lectures-wrapper">

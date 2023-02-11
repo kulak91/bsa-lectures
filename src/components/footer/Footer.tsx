@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer className="footer-wrapper">
     <div className="navbar">
       <section className="navbar-section">

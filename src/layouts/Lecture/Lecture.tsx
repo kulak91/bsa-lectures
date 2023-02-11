@@ -12,7 +12,7 @@ type LectureProps = {
   pageContext: LecturesContext;
 };
 
-const Lecture = ({
+const Lecture: React.FC<LectureProps> = ({
   children,
   pageContext: {
     frontmatter: { publishedAt, title },

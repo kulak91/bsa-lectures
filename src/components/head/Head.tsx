@@ -1,8 +1,9 @@
 import React from 'react';
 import { PageContext } from '~/types';
+import { HeadFC } from 'gatsby';
 import { useGetSiteMetadata } from '~/hooks/use-get-site-metadata';
 
-const Head = ({ pageContext }: { pageContext?: PageContext }) => {
+const Head: HeadFC = ({ pageContext }: { pageContext?: PageContext }) => {
   const {
     description: defaultDescription,
     title: defaultTitle,

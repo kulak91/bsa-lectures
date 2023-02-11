@@ -2,7 +2,7 @@ import React from 'react';
 
 import './logo.scss';
 
-const LogoLink = () => {
+const LogoLink: React.FC = () => {
   return (
     <h1 className="mainpage-link">
       <a

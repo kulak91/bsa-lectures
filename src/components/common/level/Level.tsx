@@ -10,7 +10,7 @@ type Labels = {
   backToTop: string;
 };
 
-type LevelProps = {
+type Props = {
   number: string;
   name: string;
   difficulty: string;
@@ -18,14 +18,14 @@ type LevelProps = {
   labels?: Labels;
 };
 
-const Level = ({
+const Level: React.FC<Props> = ({
   number = '',
   name = '',
   difficulty = '',
   objectives = '',
   labels,
   ...rest
-}: LevelProps) => {
+}) => {
   const levelLabel = labels?.level || 'Level';
   const difficultyLabel = labels?.difficulty || 'Difficulty:';
   const objectivesLabel = labels?.objectives || 'Objectives:';
@@ -50,16 +50,4 @@ const Level = ({
   );
 };
 
-// Level.propTypes = {
-//   number: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//   name: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//   difficulty: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//   objectives: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//   labels: PropTypes.shape({
-//     level: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//     backToTop: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//     difficulty: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//     objectives: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-//   }),
-// };
 export default Level;
