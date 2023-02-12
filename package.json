@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "lint:js": "npx eslint . --resolve-plugins-relative-to . --fix",
+    "lint:js": "npx eslint . --resolve-plugins-relative-to .",
     "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
     "pre-commit": "lint-staged",
     "lint": "eslint .",
@@ -66,11 +66,6 @@
   },
   "engines": {
     "node": "18.x"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css,scss},gatsby*.js": [
-      "prettier --write", "tsc --noEmit"
-    ]
   },
   "overrides": {
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
