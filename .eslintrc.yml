@@ -4,8 +4,8 @@ env:
   es2021: true
 
 ignorePatterns:
-  - 'public/**/*.js'
-  - '.cache/**/*.js'
+  - 'public/'
+  - '.cache/'
   - 'src/pages/**/*.mdx'
 
 extends:
@@ -23,10 +23,22 @@ settings:
 
 overrides:
   - files:
-      - 'gatsby-config.ts'
+    - 'gatsby-config.ts'
     rules:
       '@typescript-eslint/quotes':
         - off
+  - files:
+    - '*.json'
+    rules:
+      '@typescript-eslint/quotes':
+        - off
+      '@typescript-eslint/comma-dangle':
+        - off
+      '@typescript-eslint/semi':
+        - off 
+
+
+
 
 parser: "@typescript-eslint/parser"
 
