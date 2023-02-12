@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { LecturesQuery } from '~/types';
+import { LectureEdge, LecturesQuery } from '~/types';
 
-const useGetLectures = () => {
+const useGetLectures = (): Array<LectureEdge> => {
   const {
     allMdx: { edges },
   } = useStaticQuery<LecturesQuery>(

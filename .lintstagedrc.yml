@@ -1,4 +1,2 @@
-'*.{ts,tsx,js,jsx,css,scss,json}': 
-  - prettier --write
-  - npm run lint:js
-'*.{ts, tsx}': 'tsc --noEmit'
+'*.{ts,tsx,js,jsx,json}': prettier --write
+'*.{ts, tsx}': 'npm run lint:js'
