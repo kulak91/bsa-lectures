@@ -21,6 +21,13 @@ settings:
   'mdx/code-blocks':
     - true
 
+overrides:
+  - files:
+      - 'gatsby-config.ts'
+    rules:
+      '@typescript-eslint/quotes':
+        - off
+
 parser: "@typescript-eslint/parser"
 
 rules:
