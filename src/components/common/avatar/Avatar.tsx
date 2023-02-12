@@ -1,6 +1,6 @@
 import React from 'react';
 import { nameToImage } from './utils/name-to-image';
-import { Author } from '~/data/homepage/lectures-list';
+import { Author } from '~/types';
 
 type Props = {
   name: Author;
