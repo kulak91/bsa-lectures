@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Header } from '~/components';
+import { Footer, Header } from '~/partials';
 
 type Meta = {
   title: string;
@@ -25,5 +25,3 @@ const Page: React.FC<Props> = ({ children }) => (
 );
 
 export default Page;
-
-export { Head } from '~/components/head/Head';

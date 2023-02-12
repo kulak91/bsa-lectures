@@ -10,7 +10,7 @@ hiddenFromMainPage: true
 ---
 
 import { Lecture } from "~/layouts";
-import { viktoriiaVasylenko2021Avatar } from "~/assets/images/avatars/intro-rounded";
+import { SEO } from '~/partials';
 
 <div>
   <h1>
@@ -28,9 +28,7 @@ import { viktoriiaVasylenko2021Avatar } from "~/assets/images/avatars/intro-roun
 
 <div>
   <div className="author">
-      <div className="avatar-wrapper">
-        <object className="avatar-object" role="img" data={viktoriiaVasylenko2021Avatar} aria-label="Viktoriia Vasylenko"></object>
-      </div>
+      <Avatar name="Viktoriia Vasylenko" />
       <div className="profile">
         <h3 className="name">Viktoriia Vasylenko</h3>
         <p className="about">
@@ -141,4 +139,4 @@ To undo you changes you may use two commands: `git revert` or `git reset`.
 2. `git reset <commit>` clears the commit history until the given commit.
 
 export default Lecture;
-export { Head } from '~/components';
+export { SEO as Head };
