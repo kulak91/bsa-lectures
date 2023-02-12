@@ -1,10 +1,10 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import { isDateInThePast } from '~/utils';
-import { Avatar } from '../common';
+import { Avatar } from '../../common';
 import { useGetLectures } from '~/hooks/use-get-lectures';
 
-import './styles.css';
+import './lectures-grid.css';
 
 const LecturesGrid: React.FC = () => {
   const edges = useGetLectures();

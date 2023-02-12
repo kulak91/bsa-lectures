@@ -10,6 +10,7 @@ hiddenFromMainPage: true
 ---
 
 import { Lecture } from "~/layouts";
+import { SEO } from '~/partials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faGlobe, faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/pro-regular-svg-icons";
@@ -705,3 +706,4 @@ Let's download the repository using the command line. [**Git Handbook**](https:/
 </div>
 
 export default Lecture;
+export { SEO as Head };

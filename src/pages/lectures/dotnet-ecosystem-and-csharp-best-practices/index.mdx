@@ -9,6 +9,7 @@ publishedAt: "2023-01-15T00:00:00"
 hiddenFromMainPage: true
 ---
 import { Lecture } from "~/layouts";
+import { SEO } from '~/partials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGithub, faLinkedin, faSkype } from "@fortawesome/free-brands-svg-icons";
 import { ivanHedz2023Avatar } from "~/assets/images/avatars/intro-rounded";
@@ -1592,3 +1593,4 @@ import "./styles.css";
 </div>
 
 export default Lecture;
+export { SEO as Head };

@@ -10,6 +10,7 @@ hiddenFromMainPage: true
 ---
 
 import { Lecture } from "~/layouts";
+import { SEO } from '~/partials';
 import resume_template from "~/assets/images/resume_template.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
@@ -1076,3 +1077,4 @@ import { faChevronRight } from "@fortawesome/pro-regular-svg-icons";
 </div>
 
 export default Lecture;
+export { SEO as Head };

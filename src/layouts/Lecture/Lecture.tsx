@@ -2,7 +2,7 @@ import React from 'react';
 import { isDateInThePast } from '~/utils';
 
 import { LecturesContext } from '~/types';
-import { Footer, Header } from '~/components';
+import { Footer, Header } from '~/partials';
 
 import './Lecture.scss';
 import 'prismjs/themes/prism.css';
@@ -47,4 +47,3 @@ const Lecture: React.FC<LectureProps> = ({
 };
 
 export default Lecture;
-export { Head } from '~/components/head/Head';

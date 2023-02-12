@@ -10,6 +10,7 @@ hiddenFromMainPage: true
 ---
 
 import { Lecture } from '~/layouts';
+import { SEO } from '~/partials';
 import { serhiiYanchuk2023Avatar } from "~/assets/images/avatars/intro-rounded";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/pro-solid-svg-icons";
@@ -333,3 +334,4 @@ In order to use them, we have to wrap the return value type in the `ActionResult
 </div>
 
 export default Lecture;
+export { SEO as Head };

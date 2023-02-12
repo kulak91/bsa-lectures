@@ -10,6 +10,7 @@ hiddenFromMainPage: true
 ---
 
 import { Lecture } from "~/layouts";
+import { SEO } from '~/partials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/pro-regular-svg-icons";
@@ -1059,3 +1060,4 @@ Pay attention, that **you have only 3 attempts to run the automated tests** - so
 </div>
 
 export default Lecture;
+export { SEO as Head };

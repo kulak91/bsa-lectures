@@ -9,6 +9,7 @@ publishedAt: "2021-12-20T00:00:00"
 hiddenFromMainPage: true
 ---
 import { Lecture } from '~/layouts';
+import { SEO } from '~/partials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faQuestionCircle } from "@fortawesome/pro-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/pro-regular-svg-icons";
@@ -1056,3 +1057,4 @@ I was told that you all know how to deploy client applications, so why not learn
 </div>
 
 export default Lecture;
+export { SEO as Head };

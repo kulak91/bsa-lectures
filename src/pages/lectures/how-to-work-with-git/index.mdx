@@ -10,6 +10,8 @@ hiddenFromMainPage: false
 ---
 
 import { Lecture } from "~/layouts";
+import { SEO } from '~/partials';
+
 
 <div>
   <h1>
@@ -136,4 +138,4 @@ import { Lecture } from "~/layouts";
 2. `git reset <commit>` очищує історію комітів впритул до заданого.
 
 export default Lecture;
-export { Head } from '~/components';
+export { SEO as Head };

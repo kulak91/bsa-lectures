@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { PageProps } from 'gatsby';
-import { Footer, Header, LecturesGrid, LogoLink } from '~/components';
+import { HeadFC, PageProps } from 'gatsby';
+import { LecturesGrid, LogoLink } from '~/components';
+import { Footer, Header, SEO } from '~/partials';
 
 import '~/assets/stylesheets/index.css';
 
@@ -37,5 +38,4 @@ const IndexPage: React.FC<PageProps> = () => {
 };
 
 export default IndexPage;
-
-export { Head } from '~/components';
+export const Head: HeadFC = () => <SEO />;

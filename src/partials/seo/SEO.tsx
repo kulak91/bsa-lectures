@@ -1,9 +1,15 @@
 import React from 'react';
 import { PageContext } from '~/types';
-import { HeadFC } from 'gatsby';
 import { useGetSiteMetadata } from '~/hooks/use-get-site-metadata';
 
-const Head: HeadFC = ({ pageContext }: { pageContext?: PageContext }) => {
+type SEOProps = {
+  pageContext?: PageContext;
+};
+
+const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({
+  pageContext,
+  children,
+}) => {
   const {
     description: defaultDescription,
     title: defaultTitle,
@@ -20,7 +26,9 @@ const Head: HeadFC = ({ pageContext }: { pageContext?: PageContext }) => {
   return (
     <>
       <html lang="en" />
-      <title>{seo.title}</title>
+      <title>
+        {seo.title} • {defaultTitle}
+      </title>
       <meta name="description" content={seo.description} />
       <meta name="og:title" content={seo.title} />
       <meta name="og:description" content={seo.description} />
@@ -33,8 +41,9 @@ const Head: HeadFC = ({ pageContext }: { pageContext?: PageContext }) => {
         name="keywords"
         content={seo.keywords.length ? seo.keywords.join(', ') : ''}
       />
+      {children}
     </>
   );
 };
 
-export { Head };
+export { SEO };

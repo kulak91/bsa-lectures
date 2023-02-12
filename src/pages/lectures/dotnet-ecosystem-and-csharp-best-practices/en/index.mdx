@@ -9,6 +9,7 @@ publishedAt: "2023-01-15T00:00:00"
 hiddenFromMainPage: true
 ---
 import { Lecture } from "~/layouts";
+import { SEO } from '~/partials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faGithub, faLinkedin, faSkype } from "@fortawesome/free-brands-svg-icons";
 import { ivanHedz2023Avatar } from "../../../../assets/images/avatars/intro-rounded";
@@ -1163,3 +1164,4 @@ import "../styles.css";
 <div className="bubble">I can talk about C# and .NET for a long time, but in this lecture I shared the main, in my opinion, for you at the moment. That's all, thanks for your attention, rate the lecture in your personal accounts, leave feedback, ask questions, do your homework and see you at the code review! 👋</div>
 
 export default Lecture;
+export { SEO as Head };
