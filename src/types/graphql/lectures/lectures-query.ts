@@ -1,4 +1,4 @@
-import { Author } from '~/data/homepage/lectures-list';
+import { Author } from '../../lectures/author/author';
 
 type LectureEdge = {
   node: {
