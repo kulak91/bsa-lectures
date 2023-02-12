@@ -15,6 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
+    "typecheck:tsx": "tsc --noEmit --jsx react",
     "lint:js": "npx eslint . --resolve-plugins-relative-to .",
     "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
     "pre-commit": "lint-staged",
