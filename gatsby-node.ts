@@ -1,9 +1,7 @@
 import { createFilePath } from 'gatsby-source-filesystem';
 import { GatsbyNode } from 'gatsby';
 
-// Here we're adding extra stuff to the "node" (like the slug)
-// so we can query later for all blogs and get their slug
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({
+const onCreateNode: GatsbyNode['onCreateNode'] = ({
   node,
   actions,
   getNode,
@@ -11,17 +9,14 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   const { createNodeField } = actions;
   if (node.internal.type === 'Mdx') {
     createNodeField({
-      // Individual MDX node
       node,
-      // Name of the field you are adding
       name: 'slug',
-      // Generated value
       value: createFilePath({ node, getNode }),
     });
   }
 };
 
-export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   stage,
   loaders,
   actions,
@@ -39,3 +34,5 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
     });
   }
 };
+
+export { onCreateNode, onCreateWebpackConfig };
