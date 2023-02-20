@@ -2,7 +2,7 @@ import type { GatsbyConfig } from 'gatsby';
 import remarkGfm from 'remark-gfm';
 
 const config: GatsbyConfig = {
-  pathPrefix: '/lecture-abstracts',
+  pathPrefix: '/bsa-lectures',
   siteMetadata: {
     title: 'Binary Studio Academy',
     description: 'Lectures for the 2nd stage of the Binary Studio Academy',
