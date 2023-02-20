@@ -68,8 +68,7 @@
     "lint": "npm run lint:js && npm run lint:type"
   },
   "engines": {
-    "node": "18.x",
-    "npm": "8.x"
+    "node": "18.x"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
