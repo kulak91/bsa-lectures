@@ -1,5 +1,6 @@
 import { createFilePath } from 'gatsby-source-filesystem';
 import { GatsbyNode } from 'gatsby';
+import { createMainPage } from './gatsby/gatsby';
 
 const onCreateNode: GatsbyNode['onCreateNode'] = ({
   node,
@@ -7,13 +8,26 @@ const onCreateNode: GatsbyNode['onCreateNode'] = ({
   getNode,
 }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === 'Mdx') {
+  if (
+    node.internal.type === 'Mdx' &&
+    node.internal.contentFilePath?.endsWith('index.mdx')
+  ) {
     createNodeField({
       node,
       name: 'slug',
       value: createFilePath({ node, getNode }),
     });
   }
+};
+
+const createPages: GatsbyNode['createPages'] = async ({
+  actions,
+  graphql,
+  reporter,
+}) => {
+  const { createPage } = actions;
+
+  await createMainPage(createPage, graphql, reporter);
 };
 
 const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
@@ -35,4 +49,4 @@ const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   }
 };
 
-export { onCreateNode, onCreateWebpackConfig };
+export { onCreateNode, onCreateWebpackConfig, createPages };
